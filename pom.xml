@@ -15,11 +15,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <name>JBoss Web Services - Hudson Configurations</name>
+  <name>JBoss Web Services - Hudson Integration</name>
   <groupId>org.jboss.ws</groupId>
   <artifactId>jbossws-hudson</artifactId>
   <packaging>pom</packaging>
-  <description>JBossWS Hudson</description>
+  <description>JBossWS Hudson Integration</description>
   <version>4.0.0-SNAPSHOT</version>
 
   <scm>
