@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <builders class="vector"/>
+  <publishers class="vector">
+    <hudson.tasks.BuildTrigger>
+      <childProjects>AS-6.0.0, AS-6.0.1</childProjects>
+    </hudson.tasks.BuildTrigger>
+  </publishers>
+  <buildWrappers class="vector"/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <enableRemoteTrigger>false</enableRemoteTrigger>
+  <triggers class="vector"/>
+  <logRotator>
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <description>Builds all AS servers</description>
+  <actions class="vector"/>
+</project>

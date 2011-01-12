@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <builders class="vector">
+    <hudson.tasks.Shell>
+      <command>
+#
+# Module settings
+#
+MODULE=MAVEN-REPOSITORY-CLEAN
+
+USER=`whoami`
+
+if [ -d /home/$USER/.m2/repository ]; then
+  rm -rf /home/$USER/.m2/repository
+fi
+if [ -d /data/maven-repos/hudson/repository ]; then
+  rm -rf /data/maven-repos/hudson/repository
+fi
+      </command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers class="vector">
+    <hudson.tasks.Mailer>
+      <recipients>@hudson.mail.recipients@</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>true</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers class="vector"/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <enableRemoteTrigger>false</enableRemoteTrigger>
+  <triggers class="vector">
+    <hudson.triggers.TimerTrigger>
+      <spec>50 16 * * 6</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <logRotator>
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <description>Deletes user local maven repository</description>
+  <actions class="vector"/>
+</project>

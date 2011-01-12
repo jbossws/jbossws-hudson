@@ -1,0 +1,40 @@
+#
+# A sample ant properties file
+#
+
+# JBoss remote repository
+jboss.repository=http://repository.jboss.org
+
+# The JBoss settings
+jboss.server.instance=default
+jboss.bind.address=localhost
+
+# JDK settings
+java.home.sun.jdk6=/usr/java/jdk1.6
+
+# Hudson QA Environment
+hudson.username=changeme
+hudson.password=changeme
+
+hudson.root=/data/workspace
+hudson.host=jbossws.jboss.org
+hudson.admin.port=8150
+hudson.http.port=8180
+
+hudson.native.url=http://anonsvn.jboss.org/repos/jbossws/stack/native/trunk
+hudson.cxf.url=http://anonsvn.jboss.org/repos/jbossws/stack/cxf/trunk
+
+hudson.jboss600.url=http://anonsvn.jboss.org/repos/jbossas/tags/6.0.0.Final
+hudson.jboss600.build=jboss-6.0.0.Final
+hudson.jboss600.rev=HEAD
+
+hudson.jboss601.url=http://anonsvn.jboss.org/repos/jbossas/trunk
+hudson.jboss601.build=jboss-6.0.1-SNAPSHOT
+hudson.jboss601.rev=HEAD
+
+hudson.mail.recipients=
+hudson.smtp.host=localhost
+
+# Hudson setup
+apache-tomcat=5.5.31
+sun-hudson=1.226

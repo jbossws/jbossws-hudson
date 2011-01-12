@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ====================================================================== -->
+<!--                                                                        -->
+<!--  JBoss, the OpenSource J2EE webOS                                      -->
+<!--                                                                        -->
+<!--  Distributable under LGPL license.                                     -->
+<!--  See terms of license at http://www.gnu.org.                           -->
+<!--                                                                        -->
+<!-- ====================================================================== -->
+
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <name>JBoss Web Services - Hudson Configurations</name>
+  <groupId>org.jboss.ws</groupId>
+  <artifactId>jbossws-hudson</artifactId>
+  <packaging>pom</packaging>
+  <description>JBossWS Hudson</description>
+  <version>4.0.0-SNAPSHOT</version>
+
+  <scm>
+    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossws/hudson/trunk</connection>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossws/hudson/trunk</developerConnection>
+    <url>http://fisheye.jboss.com/viewrep/JBossWS/hudson/trunk</url>
+  </scm>
+
+</project>
