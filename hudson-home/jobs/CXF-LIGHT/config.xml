@@ -11,14 +11,6 @@
 , CXF-BINDIST-AS-6.0.0-SUN-JDK-6
 
 , CXF-BINDIST-AS-6.0.0-SPRING-SUN-JDK-6
-
-, CXF-CORE-AS-6.0.1-SUN-JDK-6
-
-, CXF-CORE-AS-6.0.1-SPRING-SUN-JDK-6
-
-, CXF-BINDIST-AS-6.0.1-SUN-JDK-6
-
-, CXF-BINDIST-AS-6.0.1-SPRING-SUN-JDK-6
       </childProjects>
     </hudson.tasks.BuildTrigger>
   </publishers>

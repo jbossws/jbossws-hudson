@@ -13,7 +13,6 @@
   <tr><th align=left>JBossWS CXF:</th><td>@hudson.cxf.url@</td></tr>
   <tr><td colspan=2></td></tr>
   <tr><th align=left>@hudson.jboss600.build@</th><td>-r@hudson.jboss600.rev@ @hudson.jboss600.url@</td></tr>
-  <tr><th align=left>@hudson.jboss601.build@</th><td>-r@hudson.jboss601.rev@ @hudson.jboss601.url@</td></tr>
   <tr><td colspan=2></td></tr>
   </table>
 ]]>
@@ -30,7 +29,6 @@
         <no-comparator/>
         <string>AS-ALL</string>
         <string>AS-6.0.0</string>
-        <string>AS-6.0.1</string>
       </jobNames>
       <name>AS Builds</name>
       <description>
@@ -47,7 +45,6 @@
         <no-comparator/>
         <string>AS-TESTS-ALL</string>
         <string>AS-TESTS-AS-6.0.0</string>
-        <string>AS-TESTS-AS-6.0.1</string>
       </jobNames>
       <name>AS Tests</name>
       <description>
@@ -69,9 +66,6 @@
         <string>NATIVE-CORE-AS-6.0.0-SUN-JDK-6</string>
         <string>NATIVE-BINDIST-AS-6.0.0-SUN-JDK-6</string>
         <string>NATIVE-SRCDIST-AS-6.0.0-SUN-JDK-6</string>
-        <string>NATIVE-CORE-AS-6.0.1-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-6.0.1-SUN-JDK-6</string>
-        <string>NATIVE-SRCDIST-AS-6.0.1-SUN-JDK-6</string>
       </jobNames>
       <name>Native Tests</name>
       <description>
@@ -96,12 +90,6 @@
         <string>CXF-BINDIST-AS-6.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-6.0.0-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-6.0.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-6.0.1-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-6.0.1-SPRING-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-6.0.1-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-6.0.1-SPRING-SUN-JDK-6</string>
-        <string>CXF-SRCDIST-AS-6.0.1-SUN-JDK-6</string>
-        <string>CXF-SRCDIST-AS-6.0.1-SPRING-SUN-JDK-6</string>
       </jobNames>
       <name>CXF Tests</name>
       <description>
@@ -123,15 +111,9 @@
         <string>CXF-CORE-AS-6.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-6.0.0-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-6.0.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-6.0.1-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-6.0.1-SPRING-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-6.0.1-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-6.0.1-SPRING-SUN-JDK-6</string>
         <string>NATIVE-LIGHT</string>
         <string>NATIVE-CORE-AS-6.0.0-SUN-JDK-6</string>
         <string>NATIVE-BINDIST-AS-6.0.0-SUN-JDK-6</string>
-        <string>NATIVE-CORE-AS-6.0.1-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-6.1.0-SUN-JDK-6</string>
       </jobNames>
       <name>Working Days Tests</name>
       <description>

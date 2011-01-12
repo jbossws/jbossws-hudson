@@ -3,7 +3,7 @@
   <builders class="vector"/>
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
-      <childProjects>AS-TESTS-AS-6.0.0, AS-TESTS-AS-6.0.1</childProjects>
+      <childProjects>AS-TESTS-AS-6.0.0</childProjects>
     </hudson.tasks.BuildTrigger>
   </publishers>
   <buildWrappers class="vector"/>

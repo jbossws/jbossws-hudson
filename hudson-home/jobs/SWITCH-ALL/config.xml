@@ -3,7 +3,7 @@
   <builders class="vector"/>
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
-      <childProjects>SWITCH-BINDIST-AS-6.0.0, SWITCH-BINDIST-AS-6.0.1</childProjects>
+      <childProjects>SWITCH-BINDIST-AS-6.0.0</childProjects>
     </hudson.tasks.BuildTrigger>
   </publishers>
   <buildWrappers class="vector"/>

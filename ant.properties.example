@@ -28,10 +28,6 @@ hudson.jboss600.url=http://anonsvn.jboss.org/repos/jbossas/tags/6.0.0.Final
 hudson.jboss600.build=jboss-6.0.0.Final
 hudson.jboss600.rev=HEAD
 
-hudson.jboss601.url=http://anonsvn.jboss.org/repos/jbossas/trunk
-hudson.jboss601.build=jboss-6.0.1-SNAPSHOT
-hudson.jboss601.rev=HEAD
-
 hudson.mail.recipients=
 hudson.smtp.host=localhost
 
