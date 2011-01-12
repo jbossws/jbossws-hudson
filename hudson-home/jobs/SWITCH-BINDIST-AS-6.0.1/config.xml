@@ -10,7 +10,7 @@ MODULE=SWITCH-BINDIST-AS-6.0.1
 
 WORKSPACE=`pwd`
 JAVA_HOME=@java.home.sun.jdk6@
-HUDSON_DIR=$WORKSPACE/framework-hudson
+SCRIPTS_DIR=$WORKSPACE/hudson-scripts
 TEST_OPTS=
 JBOSS_TARGET=jboss601
 JBOSS_BIND_ADDRESS=@jboss.bind.address@
@@ -24,7 +24,7 @@ NATIVE_AS_HOME=$WORKSPACE/native-as
 #
 # load test functions
 #
-. $HUDSON_DIR/jboss/bin/jbossws-qa.sh
+. $SCRIPTS_DIR/jbossws-qa.sh
 
 
 rm -rf $WORKSPACE/*.diff
@@ -87,8 +87,8 @@ rm -rf $NATIVE_AS_HOME
   <scm class="hudson.scm.SubversionSCM">
     <locations>
       <hudson.scm.SubversionSCM-ModuleLocation>
-        <remote>@hudson.framework.url@/hudson</remote>
-        <local>framework-hudson</local>
+        <remote>@jbossws.hudson.url@/scripts</remote>
+        <local>hudson-scripts</local>
       </hudson.scm.SubversionSCM-ModuleLocation>
     </locations>
     <useUpdate>true</useUpdate>

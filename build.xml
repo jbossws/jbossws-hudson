@@ -108,7 +108,7 @@
       <arg line="--xml"/>
     </exec>
     <xmlproperty file="${hudson.target.dir}/svn-info.xml"/>
-    <property name="hudson.framework.url" value="${info.entry.url}"/>
+    <property name="jbossws.hudson.url" value="${info.entry.url}"/>
 
     <!-- Configure Hudson -->
     <copy todir="${hudson.home}" overwrite="true">
@@ -118,7 +118,7 @@
         <include name="*.xml"/>
       </fileset>
       <filterset>
-        <filter token="hudson.framework.url" value="${hudson.framework.url}"/>
+        <filter token="jbossws.hudson.url" value="${jbossws.hudson.url}"/>
         <filter token="hudson.home" value="${hudson.home}"/>
         <filter token="version.id" value="${version.id}"/>
         <filtersfile file="${hudson.dir}/ant.properties"/>

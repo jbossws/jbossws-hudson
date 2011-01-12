@@ -9,7 +9,7 @@
 MODULE=AS-TESTS-AS-6.0.1
 
 WORKSPACE=`pwd`
-HUDSON_DIR=$WORKSPACE/framework-hudson
+SCRIPTS_DIR=$WORKSPACE/hudson-scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 JBOSS_TARGET=jboss601
 JBOSS_BIND_ADDRESS=@jboss.bind.address@
@@ -24,7 +24,7 @@ ENVIRONMENT=&quot;-Dmaven.opts=-U -Djboss.bind.address=@jboss.bind.address@ -Djb
 #
 # stop jbossas
 #
-$HUDSON_DIR/jboss/bin/jboss.sh $JBOSS_HOME stop
+$SCRIPTS_DIR/jboss.sh $JBOSS_HOME stop
 
 #
 # build and deploy 
@@ -41,13 +41,13 @@ rm -f $JBOSS_HOME/server/@jboss.server.instance@/log/server.log
 #
 # start jbossas
 #
-$HUDSON_DIR/jboss/bin/jboss.sh $JBOSS_HOME start $JBOSS_BIND_ADDRESS
+$SCRIPTS_DIR/jboss.sh $JBOSS_HOME start $JBOSS_BIND_ADDRESS
 
 # Was it successfully started?
-$HUDSON_DIR/jboss/bin/http-spider.sh $JBOSS_BIND_ADDRESS:8080 $WORKSPACE
+$SCRIPTS_DIR/http-spider.sh $JBOSS_BIND_ADDRESS:8080 $WORKSPACE
 if [ -e $WORKSPACE/spider.failed ]; then
   tail -n 100 $JBOSS_HOME/server/@jboss.server.instance@/log/server.log
-	$HUDSON_DIR/jboss/bin/jboss.sh $JBOSS_HOME stop $JBOSS_BIND_ADDRESS
+	$SCRIPTS_DIR/jboss.sh $JBOSS_HOME stop $JBOSS_BIND_ADDRESS
 	exit 1
 fi
 			
@@ -74,7 +74,7 @@ cp -r ./output/reports/*.xml $WORKSPACE/test-reports
 #
 # stop jbossas
 #
-$HUDSON_DIR/jboss/bin/jboss.sh $JBOSS_HOME stop
+$SCRIPTS_DIR/jboss.sh $JBOSS_HOME stop
 cp $JBOSS_HOME/server/@jboss.server.instance@/log/boot.log $WORKSPACE/jboss-boot.log
 cp $JBOSS_HOME/server/@jboss.server.instance@/log/server.log $WORKSPACE/jboss-server.log
 rm -rf $JBOSS_HOME
@@ -96,8 +96,8 @@ mv $WORKSPACE/jboss-copy $JBOSS_HOME
   <scm class="hudson.scm.SubversionSCM">
     <locations>
       <hudson.scm.SubversionSCM-ModuleLocation>
-        <remote>@hudson.framework.url@/hudson</remote>
-        <local>framework-hudson</local>
+        <remote>@jbossws.hudson.url@/scripts</remote>
+        <local>hudson-scripts</local>
       </hudson.scm.SubversionSCM-ModuleLocation>
       <hudson.scm.SubversionSCM-ModuleLocation>
         <remote>@hudson.cxf.url@</remote>

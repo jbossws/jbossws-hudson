@@ -11,7 +11,7 @@ MODULE=CXF-CORE-AS-6.0.1-SUN-JDK-6
 WORKSPACE=`pwd`
 STACK_ID=cxf
 JAVA_HOME=@java.home.sun.jdk6@
-HUDSON_DIR=$WORKSPACE/framework-hudson
+SCRIPTS_DIR=$WORKSPACE/hudson-scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS=
 JBOSS_TARGET=jboss601
@@ -22,7 +22,7 @@ JBOSS_INSTANCE=@hudson.home@/jobs/AS-6.0.1/workspace/JBossAS-6.0.1/build/target/
 #
 # load test functions
 #
-. $HUDSON_DIR/jboss/bin/jbossws-qa.sh
+. $SCRIPTS_DIR/jbossws-qa.sh
 
 #
 # execute core tests
@@ -46,8 +46,8 @@ coreTest
   <scm class="hudson.scm.SubversionSCM">
     <locations>
       <hudson.scm.SubversionSCM-ModuleLocation>
-        <remote>@hudson.framework.url@/hudson</remote>
-        <local>framework-hudson</local>
+        <remote>@jbossws.hudson.url@/scripts</remote>
+        <local>hudson-scripts</local>
       </hudson.scm.SubversionSCM-ModuleLocation>
       <hudson.scm.SubversionSCM-ModuleLocation>
         <remote>@hudson.cxf.url@</remote>

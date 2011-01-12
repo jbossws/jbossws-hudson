@@ -28,11 +28,11 @@ setupEnv() {
 }
 
 stopJBoss() {
-  $HUDSON_DIR/jboss/bin/jboss.sh $JBOSS_HOME stop $JBOSS_BIND_ADDRESS
+  $SCRIPTS_DIR/jboss.sh $JBOSS_HOME stop $JBOSS_BIND_ADDRESS
 }
 
 startJBoss() {
-  $HUDSON_DIR/jboss/bin/jboss.sh $JBOSS_HOME start $JBOSS_BIND_ADDRESS
+  $SCRIPTS_DIR/jboss.sh $JBOSS_HOME start $JBOSS_BIND_ADDRESS
 }
 
 copyJBossLogs() {
@@ -51,7 +51,7 @@ removeJBossLogs() {
 }
 
 ensureRunningJBoss() {
-  $HUDSON_DIR/jboss/bin/http-spider.sh $JBOSS_BIND_ADDRESS:8080 $WORKSPACE
+  $SCRIPTS_DIR/http-spider.sh $JBOSS_BIND_ADDRESS:8080 $WORKSPACE
   if [ -e $WORKSPACE/spider.failed ]; then
     tail -n 100 $JBOSS_HOME/server/$JBOSS_CONFIG/log/server.log
     stopJBoss
