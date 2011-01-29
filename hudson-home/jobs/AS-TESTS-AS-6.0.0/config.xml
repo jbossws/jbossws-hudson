@@ -30,7 +30,6 @@ $SCRIPTS_DIR/jboss.sh $JBOSS_HOME stop
 # build and deploy 
 #
 cd $STACK_DIR
-cp profiles.xml.example profiles.xml
 mvn -Ptestsuite clean
 ant $ENVIRONMENT deploy-jboss600
 

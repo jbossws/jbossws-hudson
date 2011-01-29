@@ -66,21 +66,18 @@ logMavenDependencies() {
 
 deployCoreDistributionWithSpring() {
   cd $STACK_DIR
-  cp profiles.xml.example profiles.xml
   mvn -Ptestsuite,spring clean
   ant $ENVIRONMENT -Dspring=true deploy-$JBOSS_TARGET
 }
 
 deployCoreDistribution() {
   cd $STACK_DIR
-  cp profiles.xml.example profiles.xml
   mvn -Ptestsuite clean
   ant $ENVIRONMENT deploy-$JBOSS_TARGET
 }
 
 deployBinaryDistributionWithSpring() {
   cd $STACK_DIR
-  cp profiles.xml.example profiles.xml
   mvn -Ptestsuite clean
   ant $ENVIRONMENT build-bin-dist
   cd target
@@ -93,7 +90,6 @@ deployBinaryDistributionWithSpring() {
 
 deployBinaryDistribution() {
   cd $STACK_DIR
-  cp profiles.xml.example profiles.xml
   mvn -Ptestsuite clean
   ant $ENVIRONMENT build-bin-dist
   cd target
@@ -112,27 +108,23 @@ redeployBinaryDistribution() {
 
 deploySourceDistributionWithSpring() {
   cd $STACK_DIR
-  cp profiles.xml.example profiles.xml
   mvn -Ptestsuite,spring clean
   ant $ENVIRONMENT build-src-dist
   cd target
   rm -rf jbossws-$STACK_ID-src-dist
   unzip jbossws-$STACK_ID-src-dist.zip
   cd jbossws-$STACK_ID-src-dist
-  cp profiles.xml.example profiles.xml
   ant $ENVIRONMENT -Dspring=true deploy-$JBOSS_TARGET
 }
 
 deploySourceDistribution() {
   cd $STACK_DIR
-  cp profiles.xml.example profiles.xml
   mvn -Ptestsuite clean
   ant $ENVIRONMENT build-src-dist
   cd target
   rm -rf jbossws-$STACK_ID-src-dist
   unzip jbossws-$STACK_ID-src-dist.zip
   cd jbossws-$STACK_ID-src-dist
-  cp profiles.xml.example profiles.xml
   ant $ENVIRONMENT deploy-$JBOSS_TARGET
 }
 
