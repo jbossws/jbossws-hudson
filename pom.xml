@@ -22,6 +22,13 @@
   <description>JBossWS Hudson Integration</description>
   <version>4.0.0-SNAPSHOT</version>
 
+  <!-- Parent -->
+  <parent>
+    <groupId>org.jboss.ws</groupId>
+    <artifactId>jbossws-parent</artifactId>
+    <version>1.0.10-SNAPSHOT</version>
+  </parent>
+
   <scm>
     <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossws/hudson/trunk</connection>
     <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossws/hudson/trunk</developerConnection>
