@@ -61,7 +61,8 @@
   <target name="hudson-tomcat-setup" depends="init-hudson" unless="hudson.tomcat.available">
 
     <get src="http://archive.apache.org/dist/tomcat/tomcat-5/v${apache-tomcat}/bin/apache-tomcat-${apache-tomcat}.zip" dest="${thirdparty.dir}/apache-tomcat.zip" usetimestamp="true" verbose="true"/>
-    <get src="${jboss.repository}/sun-hudson/${sun-hudson}/lib/hudson.war" dest="${thirdparty.dir}/hudson.war" usetimestamp="true" verbose="true"/>
+    <get src="http://hudson-ci.org/downloads/war/${sun-hudson}/hudson.war" dest="${thirdparty.dir}/hudson.war" usetimestamp="true" verbose="true"/>
+    <get src="http://hudson-ci.org/downloads/plugins/git/${git-plugin}/git.hpi" dest="${thirdparty.dir}/git.hpi" usetimestamp="true" verbose="true"/>
 
     <mkdir dir="${hudson.root}"/>
     <unzip src="${thirdparty.dir}/apache-tomcat.zip" dest="${hudson.root}"/>
@@ -90,7 +91,8 @@
   -->
   <target name="hudson-update" depends="init-hudson">
 
-    <get src="${jboss.repository}/sun-hudson/${sun-hudson}/lib/hudson.war" dest="${thirdparty.dir}/hudson.war" usetimestamp="false" verbose="true"/>
+    <get src="http://hudson-ci.org/downloads/war/${sun-hudson}/hudson.war" dest="${thirdparty.dir}/hudson.war" usetimestamp="true" verbose="true"/>
+    <get src="http://hudson-ci.org/downloads/plugins/git/${git-plugin}/git.hpi" dest="${thirdparty.dir}/git.hpi" usetimestamp="true" verbose="true"/>
 
     <delete dir="${hudson.tomcat}/webapps/hudson"/>
     <copy todir="${hudson.tomcat}/webapps" file="${thirdparty.dir}/hudson.war"/>
@@ -123,6 +125,11 @@
         <filter token="version.id" value="${version.id}"/>
         <filtersfile file="${hudson.dir}/ant.properties"/>
       </filterset>
+    </copy>
+    <copy todir="${hudson.home}/plugins" overwrite="true">
+      <fileset dir="${thirdparty.dir}">
+        <include name="git.hpi"/>
+      </fileset>
     </copy>
 
     <echo/>

@@ -13,9 +13,6 @@ jboss.bind.address=localhost
 java.home.sun.jdk6=/usr/java/jdk1.6
 
 # Hudson QA Environment
-hudson.username=changeme
-hudson.password=changeme
-
 hudson.root=/data/workspace
 hudson.host=jbossws.jboss.org
 hudson.admin.port=8150
@@ -33,4 +30,5 @@ hudson.smtp.host=localhost
 
 # Hudson setup
 apache-tomcat=5.5.31
-sun-hudson=1.226
+sun-hudson=1.356
+git-plugin=1.1.4

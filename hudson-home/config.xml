@@ -1,7 +1,31 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
   <numExecutors>1</numExecutors>
+  <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
+  <authorizationStrategy class="hudson.security.GlobalMatrixAuthorizationStrategy">
+    <permission>hudson.model.Item.Create:hudson</permission>
+    <permission>hudson.model.Item.Delete:hudson</permission>
+    <permission>hudson.model.Computer.Delete:hudson</permission>
+    <permission>hudson.model.View.Configure:hudson</permission>
+    <permission>hudson.model.Hudson.Administer:hudson</permission>
+    <permission>hudson.model.View.Create:hudson</permission>
+    <permission>hudson.model.Item.Configure:hudson</permission>
+    <permission>hudson.model.Item.Workspace:hudson</permission>
+    <permission>hudson.model.View.Delete:hudson</permission>
+    <permission>hudson.model.Run.Delete:hudson</permission>
+    <permission>hudson.scm.SCM.Tag:hudson</permission>
+    <permission>hudson.model.Item.Read:anonymous</permission>
+    <permission>hudson.model.Item.Read:hudson</permission>
+    <permission>hudson.model.Run.Update:hudson</permission>
+    <permission>hudson.model.Hudson.Read:anonymous</permission>
+    <permission>hudson.model.Hudson.Read:hudson</permission>
+    <permission>hudson.model.Item.Build:hudson</permission>
+    <permission>hudson.model.Computer.Configure:hudson</permission>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
+    <disableSignup>false</disableSignup>
+  </securityRealm>
   <systemMessage>
     <![CDATA[
   <h2>JBossWS-@version.id@ QA Environment</h2>
