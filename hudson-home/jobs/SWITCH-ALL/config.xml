@@ -4,6 +4,11 @@
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
       <childProjects>SWITCH-BINDIST-AS-6.0.0</childProjects>
+      <threshold>
+        <name>UNSTABLE</name>
+        <ordinal>1</ordinal>
+        <color>YELLOW</color>
+      </threshold>
     </hudson.tasks.BuildTrigger>
   </publishers>
   <buildWrappers class="vector"/>
@@ -15,6 +20,8 @@
   <logRotator>
     <daysToKeep>14</daysToKeep>
     <numToKeep>-1</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
