@@ -23,7 +23,7 @@
         <string>uploadpack</string>
         <string>git-upload-pack</string>
         <string>url</string>
-        <string>git://github.com/jbossas/jboss-as.git</string>
+        <string>https://github.com/jbossas/jboss-as.git</string>
         <string>tagopt</string>
         <string></string>
       </org.spearce.jgit.transport.RemoteConfig>
