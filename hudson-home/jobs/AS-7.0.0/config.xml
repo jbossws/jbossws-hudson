@@ -23,14 +23,14 @@
         <string>uploadpack</string>
         <string>git-upload-pack</string>
         <string>url</string>
-        <string>https://github.com/jbossas/jboss-as.git</string>
+        <string>@hudson.jboss700.url@.git</string>
         <string>tagopt</string>
         <string></string>
       </org.spearce.jgit.transport.RemoteConfig>
     </remoteRepositories>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>master</name>
+        <name>@hudson.jboss700.rev@</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <localBranch></localBranch>
@@ -44,7 +44,7 @@
     <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
     <gitTool>Default</gitTool>
     <browser class="hudson.plugins.git.browser.GithubWeb">
-      <url>https://github.com/jbossas/jboss-as/</url>
+      <url>@hudson.jboss700.url@</url>
     </browser>
     <submoduleCfg class="list"/>
     <relativeTargetDir></relativeTargetDir>
