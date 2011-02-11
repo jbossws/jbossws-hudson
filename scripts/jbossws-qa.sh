@@ -153,11 +153,11 @@ detectFailures() {
 }
 
 runTestsViaMavenWithSpring() {
-  mvn $ENVIRONMENT -Ptestsuite,hudson,spring,$JBOSS_TARGET $TEST_OPTS test 2>&1 | tee $WORKSPACE/tests.log
+  mvn $ENVIRONMENT -Ptestsuite,hudson,spring,$JBOSS_TARGET $TEST_OPTS integration-test 2>&1 | tee $WORKSPACE/tests.log
 }
 
 runTestsViaMaven() {
-  mvn $ENVIRONMENT -Ptestsuite,hudson,$JBOSS_TARGET $TEST_OPTS test 2>&1 | tee $WORKSPACE/tests.log
+  mvn $ENVIRONMENT -Ptestsuite,hudson,$JBOSS_TARGET $TEST_OPTS integration-test 2>&1 | tee $WORKSPACE/tests.log
 }
 
 runTestsViaAnt() {
