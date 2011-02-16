@@ -144,7 +144,7 @@ deploySourceDistribution() {
 }
 
 detectFailures() {
-  rm -rf $WORKSPACE/jboss-as
+  #rm -rf $WORKSPACE/jboss-as
   cat $WORKSPACE/tests.log | egrep "BUILD FAILURE|BUILD ERROR|java.lang.OutOfMemoryError" | tee $WORKSPACE/failure.log
   if [ -s $WORKSPACE/failure.log ]; then
     echo "Failure detected"
