@@ -11,7 +11,7 @@ MODULE=MAVEN-REPOSITORY-CLEAN
 USER=`whoami`
 
 if [ -d /home/$USER/.m2/repository ]; then
-  rm -rf /home/$USER/.m2/repository
+  rm -rf /home/$USER/.m2/repository/*
 fi
 if [ -d /data/maven-repos/hudson/repository ]; then
   rm -rf /data/maven-repos/hudson/repository
