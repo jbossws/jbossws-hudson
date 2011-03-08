@@ -81,19 +81,19 @@ logMavenDependencies() {
 
 deployCoreDistributionWithSpring() {
   cd $STACK_DIR
-  mvn -Ptestsuite,spring clean
+  mvn -Ptestsuite,dist,spring clean
   ant $ENVIRONMENT -Dspring=true deploy-$JBOSS_TARGET
 }
 
 deployCoreDistribution() {
   cd $STACK_DIR
-  mvn -Ptestsuite clean
+  mvn -Ptestsuite,dist clean
   ant $ENVIRONMENT deploy-$JBOSS_TARGET
 }
 
 deployBinaryDistributionWithSpring() {
   cd $STACK_DIR
-  mvn -Ptestsuite clean
+  mvn -Ptestsuite,dist clean
   ant $ENVIRONMENT build-bin-dist
   cd target
   rm -rf jbossws-$STACK_ID-bin-dist
@@ -105,7 +105,7 @@ deployBinaryDistributionWithSpring() {
 
 deployBinaryDistribution() {
   cd $STACK_DIR
-  mvn -Ptestsuite clean
+  mvn -Ptestsuite,dist clean
   ant $ENVIRONMENT build-bin-dist
   cd target
   rm -rf jbossws-$STACK_ID-bin-dist
@@ -123,7 +123,7 @@ redeployBinaryDistribution() {
 
 deploySourceDistributionWithSpring() {
   cd $STACK_DIR
-  mvn -Ptestsuite,spring clean
+  mvn -Ptestsuite,dist,spring clean
   ant $ENVIRONMENT build-src-dist
   cd target
   rm -rf jbossws-$STACK_ID-src-dist
@@ -134,7 +134,7 @@ deploySourceDistributionWithSpring() {
 
 deploySourceDistribution() {
   cd $STACK_DIR
-  mvn -Ptestsuite clean
+  mvn -Ptestsuite,dist clean
   ant $ENVIRONMENT build-src-dist
   cd target
   rm -rf jbossws-$STACK_ID-src-dist
