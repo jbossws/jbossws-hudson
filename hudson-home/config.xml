@@ -89,6 +89,7 @@
         <string>NATIVE-ALL</string>
         <string>NATIVE-LIGHT</string>
         <string>NATIVE-CORE-AS-6.0.0-SUN-JDK-6</string>
+        <string>NATIVE-CORE-AS-7.0.0-SUN-JDK-6</string>
         <string>NATIVE-BINDIST-AS-6.0.0-SUN-JDK-6</string>
         <string>NATIVE-SRCDIST-AS-6.0.0-SUN-JDK-6</string>
       </jobNames>
@@ -140,6 +141,7 @@
         <string>CXF-BINDIST-AS-6.0.0-SPRING-SUN-JDK-6</string>
         <string>NATIVE-LIGHT</string>
         <string>NATIVE-CORE-AS-6.0.0-SUN-JDK-6</string>
+        <string>NATIVE-CORE-AS-7.0.0-SUN-JDK-6</string>
         <string>NATIVE-BINDIST-AS-6.0.0-SUN-JDK-6</string>
       </jobNames>
       <name>Working Days Tests</name>

@@ -7,6 +7,8 @@
   NATIVE-CORE-AS-6.0.0-SUN-JDK-6
 
 , NATIVE-BINDIST-AS-6.0.0-SUN-JDK-6
+
+, NATIVE-CORE-AS-7.0.0-SUN-JDK-6
       </childProjects>
       <threshold>
         <name>UNSTABLE</name>
