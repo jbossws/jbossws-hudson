@@ -11,6 +11,16 @@ setupJBossHome() {
   rm -rf $WORKSPACE/jboss-as
   cp -r $JBOSS_INSTANCE $WORKSPACE/jboss-as
   export JBOSS_HOME=$WORKSPACE/jboss-as
+  # HACK if running cxf on AS6, first install/update native
+  if [ "$STACK_ID" = "cxf" ] && [ "$JBOSS_TARGET" = "jboss600" ]; then
+    echo "cxf stack with AS 600, first installing native..."
+    STACK_ID=native
+    setupEnv
+    redeployBinaryDistribution
+    STACK_ID=cxf
+  else
+    echo "No need to pre-install native..."
+  fi;
 }
 
 setupEnv() {
