@@ -15,9 +15,12 @@ setupJBossHome() {
   if [ "$STACK_ID" = "cxf" ] && [ "$JBOSS_TARGET" = "jboss600" ]; then
     echo "cxf stack with AS 600, first installing native..."
     STACK_ID=native
+    ORIG_STACK_DIR=$STACK_DIR
+    STACK_DIR=$STACK_DIR/../../../NATIVE-BINDIST-AS-6.0.0-SUN-JDK-6/workspace/stack-native/
     setupEnv
     redeployBinaryDistribution
     STACK_ID=cxf
+    STACK_DIR=$ORIG_STACK_DIR
   else
     echo "No need to pre-install native..."
   fi;
