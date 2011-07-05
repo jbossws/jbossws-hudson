@@ -26,7 +26,7 @@ hudson.jboss600.build=jboss-6.0.0.Final
 hudson.jboss600.rev=HEAD
 
 hudson.jboss700.url=https://github.com/jbossas/jboss-as
-hudson.jboss700.build=jboss-7.0.0.Beta4-SNAPSHOT
+hudson.jboss700.build=jboss-7.0.0.CR2-SNAPSHOT
 hudson.jboss700.rev=master
 
 hudson.mail.recipients=
