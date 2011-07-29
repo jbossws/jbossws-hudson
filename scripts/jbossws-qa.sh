@@ -60,7 +60,7 @@ copyJBossLogs() {
 
 copyTestLogs() {
   cat $WORKSPACE/tests.log | egrep FIXME\|FAILED | sort -u | tee $WORKSPACE/fixme.txt
-  cat $STACK_DIR/modules/testsuite/test-excludes-$JBOSS_TARGET.txt $WORKSPACE/fixme.txt | egrep "\[\S*]" > $WORKSPACE/errata-$JBOSS_TARGET.txt
+  cat $STACK_DIR/modules/dist/target/exclude-file/test-excludes-$JBOSS_TARGET.txt $WORKSPACE/fixme.txt | egrep "\[\S*]" > $WORKSPACE/errata-$JBOSS_TARGET.txt
 }
 
 removeJBossLogs() {
