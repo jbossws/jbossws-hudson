@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <builders class="vector">
+    <hudson.tasks.Shell>
+      <command>
+#
+# Module settings
+#
+MODULE=AS-TESTS-AS-6.1.0
+
+WORKSPACE=`pwd`
+SCRIPTS_DIR=$WORKSPACE/hudson-scripts
+STACK_DIR=$WORKSPACE/stack-cxf
+JBOSS_TARGET=jboss610
+JBOSS_BIND_ADDRESS=@jboss.bind.address@
+JBOSS_INSTANCE=@hudson.home@/jobs/AS-6.1.0/workspace/JBossAS-6.1.0/build/target/@hudson.jboss610.build@
+
+rm -rf $WORKSPACE/jboss-copy
+cp -r $JBOSS_INSTANCE $WORKSPACE/jboss-copy
+export JBOSS_HOME=$JBOSS_INSTANCE
+
+ENVIRONMENT=&quot;-Dmaven.opts=-U -Djboss.bind.address=@jboss.bind.address@ -Djbossws.integration.target=$JBOSS_TARGET -Djboss610.home=$JBOSS_HOME&quot;
+
+#
+# stop jbossas
+#
+$SCRIPTS_DIR/jboss.sh $JBOSS_HOME stop
+
+#
+# build and deploy 
+#
+cd $STACK_DIR
+mvn -Ptestsuite clean
+ant $ENVIRONMENT deploy-jboss610
+
+# remove obsolete logs
+rm -f $JBOSS_HOME/server/@jboss.server.instance@/log/boot.log
+rm -f $JBOSS_HOME/server/@jboss.server.instance@/log/server.log
+
+#
+# start jbossas
+#
+$SCRIPTS_DIR/jboss.sh $JBOSS_HOME start $JBOSS_BIND_ADDRESS
+
+# Was it successfully started?
+$SCRIPTS_DIR/http-spider.sh $JBOSS_BIND_ADDRESS:8080 $WORKSPACE
+if [ -e $WORKSPACE/spider.failed ]; then
+  tail -n 100 $JBOSS_HOME/server/@jboss.server.instance@/log/server.log
+	$SCRIPTS_DIR/jboss.sh $JBOSS_HOME stop $JBOSS_BIND_ADDRESS
+	exit 1
+fi
+			
+#
+# build the testsuite
+#
+cd $JBOSS_HOME/../../../testsuite
+./build.sh -Dnode0=$JBOSS_BIND_ADDRESS clean main
+
+#
+# execute tests
+#
+./build.sh -Dnode0=$JBOSS_BIND_ADDRESS init tests-webservice tests-ws tests-report 2>&amp;1 | tee $WORKSPACE/tests.log
+cat $WORKSPACE/tests.log | egrep FIXME\|FAILED | sort -u | tee $WORKSPACE/fixme.txt
+
+#
+# copy the test reports
+#
+rm -rf $WORKSPACE/test-reports
+mkdir $WORKSPACE/test-reports
+cp -r ./output/reports/*.xml $WORKSPACE/test-reports
+        
+#
+# stop jbossas
+#
+$SCRIPTS_DIR/jboss.sh $JBOSS_HOME stop
+cp $JBOSS_HOME/server/@jboss.server.instance@/log/boot.log $WORKSPACE/jboss-boot.log
+cp $JBOSS_HOME/server/@jboss.server.instance@/log/server.log $WORKSPACE/jboss-server.log
+rm -rf $JBOSS_HOME
+mv $WORKSPACE/jboss-copy $JBOSS_HOME
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers class="vector">
+    <hudson.tasks.junit.JUnitResultArchiver>
+      <testResults>test-reports/TEST-*.xml</testResults>
+    </hudson.tasks.junit.JUnitResultArchiver>
+    <hudson.tasks.Mailer>
+      <recipients>@hudson.mail.recipients@</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>true</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers class="vector"/>
+  <scm class="hudson.scm.SubversionSCM">
+    <locations>
+      <hudson.scm.SubversionSCM-ModuleLocation>
+        <remote>@jbossws.hudson.url@/scripts</remote>
+        <local>hudson-scripts</local>
+      </hudson.scm.SubversionSCM-ModuleLocation>
+      <hudson.scm.SubversionSCM-ModuleLocation>
+        <remote>@hudson.cxf.url@</remote>
+        <local>stack-cxf</local>
+      </hudson.scm.SubversionSCM-ModuleLocation>
+    </locations>
+    <useUpdate>true</useUpdate>
+    <browser class="hudson.scm.browsers.FishEyeSVN">
+      <url>http://fisheye.jboss.com/browse/JBossWS/</url>
+      <rootModule></rootModule>
+    </browser>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <enableRemoteTrigger>false</enableRemoteTrigger>
+  <triggers class="vector"/>
+  <logRotator>
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <description>Run the AS-6.1.0 webservice testsuite agains jbossws-@version.id@</description>
+  <actions class="vector"/>
+</project>

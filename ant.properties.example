@@ -25,6 +25,10 @@ hudson.jboss600.url=http://anonsvn.jboss.org/repos/jbossas/tags/6.0.0.Final
 hudson.jboss600.build=jboss-6.0.0.Final
 hudson.jboss600.rev=HEAD
 
+hudson.jboss610.url=http://anonsvn.jboss.org/repos/jbossas/tags/6.1.0.Final
+hudson.jboss610.build=jboss-6.1.0.Final
+hudson.jboss610.rev=HEAD
+
 hudson.jboss700.url=https://github.com/jbossas/jboss-as
 hudson.jboss700.build=jboss-as-7.0.0.Final
 hudson.jboss700.rev=7.0.0.Final
