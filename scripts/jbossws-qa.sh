@@ -12,8 +12,8 @@ setupJBossHome() {
   cp -r $JBOSS_INSTANCE $WORKSPACE/jboss-as
   export JBOSS_HOME=$WORKSPACE/jboss-as
   # HACK if running cxf on AS6, first install/update native
-  if [ "$STACK_ID" = "cxf" ] && [ "$JBOSS_TARGET" = "jboss600" ]; then
-    echo "cxf stack with AS 600, first installing native..."
+  if [ "$STACK_ID" = "cxf" ] && [[ $JBOSS_TARGET == jboss6* ]]; then
+    echo "cxf stack with AS 6x, first installing native..."
     STACK_ID=native
     ORIG_STACK_DIR=$STACK_DIR
     STACK_DIR=$STACK_DIR/../../../NATIVE-BINDIST-AS-6.0.0-SUN-JDK-6/workspace/stack-native/
