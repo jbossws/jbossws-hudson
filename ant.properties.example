@@ -34,7 +34,7 @@ hudson.jboss700.build=jboss-as-7.0.0.Final
 hudson.jboss700.rev=7.0.0.Final
 
 hudson.jboss710.url=https://github.com/jbossas/jboss-as
-hudson.jboss710.build=jboss-as-7.1.0.Alpha1-SNAPSHOT
+hudson.jboss710.build=jboss-as-7.1.0.Alpha2-SNAPSHOT
 hudson.jboss710.rev=master
 
 hudson.mail.recipients=
