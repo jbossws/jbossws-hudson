@@ -12,7 +12,7 @@ PIDFILE="$JBOSS_HOME/bin/jboss.pid"
 if [ -f "$JBOSS_HOME/bin/run.sh" ]; then
    RUN_CMD="$DIRNAME/runjboss.sh -b $BINDADDR"
 else
-   RUN_CMD="$JBOSS_HOME/bin/standalone.sh -server-config standalone-preview.xml"
+   RUN_CMD="$JBOSS_HOME/bin/standalone.sh"
    export LAUNCH_JBOSS_IN_BACKGROUND="true"
    export JBOSS_PIDFILE=$PIDFILE
 fi
