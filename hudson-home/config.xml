@@ -37,7 +37,6 @@
   <tr><th align=left>JBossWS CXF:</th><td>@hudson.cxf.url@</td></tr>
   <tr><td colspan=2></td></tr>
   <tr><th align=left>@hudson.jboss600.build@</th><td>-r@hudson.jboss600.rev@ @hudson.jboss600.url@</td></tr>
-  <tr><th align=left>@hudson.jboss610.build@</th><td>-r@hudson.jboss610.rev@ @hudson.jboss610.url@</td></tr>
   <tr><th align=left>@hudson.jboss700.build@</th><td>-r@hudson.jboss700.rev@ @hudson.jboss700.url@</td></tr>
   <tr><th align=left>@hudson.jboss710.build@</th><td>-r@hudson.jboss710.rev@ @hudson.jboss710.url@</td></tr>
   <tr><td colspan=2></td></tr>
