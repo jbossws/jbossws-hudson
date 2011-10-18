@@ -3,7 +3,7 @@
   <builders class="vector"/>
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
-      <childProjects>AS-6.0.0, AS-6.1.0, AS-7.0.0, AS-7.1.0</childProjects>
+      <childProjects>AS-6.0.0, AS-7.0.0, AS-7.1.0</childProjects>
       <threshold>
         <name>UNSTABLE</name>
         <ordinal>1</ordinal>
