@@ -9,6 +9,11 @@ BINDADDR="$3"
 export JBOSS_HOME
 PIDFILE="$JBOSS_HOME/bin/jboss.pid"
 
+# Overwrite standalone.xml with standalone-preview.xml if available (AS 7.0.x)
+if [ -f "$JBOSS_HOME/standalone/configuration/standalone-preview.xml" ]; then
+   cp $JBOSS_HOME/standalone/configuration/standalone-preview.xml $JBOSS_HOME/standalone/configuration/standalone.xml
+fi
+
 if [ -f "$JBOSS_HOME/bin/run.sh" ]; then
    RUN_CMD="$DIRNAME/runjboss.sh -b $BINDADDR"
 else
