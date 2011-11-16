@@ -29,6 +29,14 @@ hudson.jboss700.url=https://github.com/jbossas/jboss-as
 hudson.jboss700.build=jboss-as-7.0.0.Final
 hudson.jboss700.rev=7.0.0.Final
 
+hudson.jboss701.url=https://github.com/jbossas/jboss-as
+hudson.jboss701.build=jboss-as-7.0.1.Final
+hudson.jboss701.rev=7.0.1.Final
+
+hudson.jboss702.url=https://github.com/jbossas/jboss-as
+hudson.jboss702.build=jboss-as-7.0.2.Final
+hudson.jboss702.rev=7.0.2.Final
+
 hudson.jboss710.url=https://github.com/jbossas/jboss-as
 hudson.jboss710.build=jboss-as-7.1.0.Alpha2-SNAPSHOT
 hudson.jboss710.rev=master
