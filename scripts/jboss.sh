@@ -14,6 +14,11 @@ if [ -f "$JBOSS_HOME/standalone/configuration/standalone-preview.xml" ]; then
    cp $JBOSS_HOME/standalone/configuration/standalone-preview.xml $JBOSS_HOME/standalone/configuration/standalone.xml
 fi
 
+# Overwrite standalone.xml with standalone-preview.xml if available (AS 7.1.x since https://github.com/jbossas/jboss-as/commit/641a75718909fbe04f80a15740ecb26d4889c66e )
+if [ -f "$JBOSS_HOME/standalone/configuration/standalone-full.xml" ]; then
+   cp $JBOSS_HOME/standalone/configuration/standalone-full.xml $JBOSS_HOME/standalone/configuration/standalone.xml
+fi
+
 if [ -f "$JBOSS_HOME/bin/run.sh" ]; then
    RUN_CMD="$DIRNAME/runjboss.sh -b $BINDADDR"
 else
