@@ -3,7 +3,7 @@
   <builders class="vector"/>
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
-      <childProjects>SWITCH-BINDIST-AS-6.0.0</childProjects>
+      <childProjects></childProjects>
       <threshold>
         <name>UNSTABLE</name>
         <ordinal>1</ordinal>

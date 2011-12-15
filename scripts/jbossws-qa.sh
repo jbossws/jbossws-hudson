@@ -15,17 +15,7 @@ setupJBossHome() {
     echo "Copying default mgmt-users.properties to AS..."
     cp $STACK_DIR/etc/mgmt-users.properties $JBOSS_HOME/standalone/configuration
   fi;
-  # HACK if running cxf on AS6 / AS71x, first install/update native
-  if [ "$STACK_ID" = "cxf" ] && [[ $JBOSS_TARGET == jboss6* ]]; then
-    echo "cxf stack with AS 6x, first installing native..."
-    STACK_ID=native
-    ORIG_STACK_DIR=$STACK_DIR
-    STACK_DIR=$STACK_DIR/../../../NATIVE-BINDIST-AS-6.0.0-SUN-JDK-6/workspace/stack-native/
-    setupEnv
-    redeployBinaryDistribution
-    STACK_ID=cxf
-    STACK_DIR=$ORIG_STACK_DIR
-  fi;
+  # HACK if running cxf on AS71x, first install/update native
   if [ "$STACK_ID" = "cxf" ] && [[ $JBOSS_TARGET == jboss71* ]]; then
     echo "cxf stack with AS 71x, first installing native..."
     STACK_ID=native
@@ -61,13 +51,8 @@ startJBoss() {
 }
 
 copyJBossLogs() {
-  if [ -f $JBOSS_HOME/bin/run.sh ]; then
-    cp $JBOSS_HOME/server/$JBOSS_CONFIG/log/boot.log $WORKSPACE/jboss-boot.log
-    cp $JBOSS_HOME/server/$JBOSS_CONFIG/log/server.log $WORKSPACE/jboss-server.log
-  else
-    cp $JBOSS_HOME/standalone/log/boot.log $WORKSPACE/jboss-boot.log
-    cp $JBOSS_HOME/standalone/log/server.log $WORKSPACE/jboss-server.log
-  fi
+  cp $JBOSS_HOME/standalone/log/boot.log $WORKSPACE/jboss-boot.log
+  cp $JBOSS_HOME/standalone/log/server.log $WORKSPACE/jboss-server.log
 }
 
 copyTestLogs() {
@@ -76,28 +61,23 @@ copyTestLogs() {
 }
 
 removeJBossLogs() {
-  if [ -f $JBOSS_HOME/bin/run.sh ]; then
-    rm -f $JBOSS_HOME/server/$JBOSS_CONFIG/log/boot.log
-    rm -f $JBOSS_HOME/server/$JBOSS_CONFIG/log/server.log
-  else
-    rm -f $JBOSS_HOME/standalone/log/boot.log
-    rm -f $JBOSS_HOME/standalone/log/server.log
-  fi
+  rm -f $JBOSS_HOME/standalone/log/boot.log
+  rm -f $JBOSS_HOME/standalone/log/server.log
 }
 
 ensureRunningJBoss() {
-  if [ -f $JBOSS_HOME/bin/run.sh ]; then
-    $SCRIPTS_DIR/http-spider.sh $JBOSS_BIND_ADDRESS:8080 $WORKSPACE
-    if [ -e $WORKSPACE/spider.failed ]; then
-      tail -n 100 $JBOSS_HOME/server/$JBOSS_CONFIG/log/server.log
-      stopJBoss
-      copyJBossLogs
-      exit 1
-    fi
-  else
-    echo "There's no admin console for AS7 yet"
+#  if [ -f $JBOSS_HOME/bin/run.sh ]; then
+#    $SCRIPTS_DIR/http-spider.sh $JBOSS_BIND_ADDRESS:8080 $WORKSPACE
+#    if [ -e $WORKSPACE/spider.failed ]; then
+#      tail -n 100 $JBOSS_HOME/server/$JBOSS_CONFIG/log/server.log
+#      stopJBoss
+#      copyJBossLogs
+#      exit 1
+#    fi
+#  else
+#    echo "There's no admin console for AS7 yet"
     sleep 20
-  fi
+#  fi
 }
 
 logMavenDependencies() {

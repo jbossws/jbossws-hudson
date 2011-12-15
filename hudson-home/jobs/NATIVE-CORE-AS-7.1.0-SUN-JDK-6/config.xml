@@ -16,7 +16,6 @@ STACK_DIR=$WORKSPACE/stack-native
 TEST_OPTS="-Dinterop=true"
 JBOSS_TARGET=jboss710
 JBOSS_BIND_ADDRESS=@jboss.bind.address@
-JBOSS_CONFIG=@jboss.server.instance@
 JBOSS_INSTANCE=@hudson.home@/jobs/AS-7.1.0/workspace/build/target/@hudson.jboss710.build@
 
 #

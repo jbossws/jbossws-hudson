@@ -19,13 +19,10 @@ if [ -f "$JBOSS_HOME/standalone/configuration/standalone-full.xml" ]; then
    cp $JBOSS_HOME/standalone/configuration/standalone-full.xml $JBOSS_HOME/standalone/configuration/standalone.xml
 fi
 
-if [ -f "$JBOSS_HOME/bin/run.sh" ]; then
-   RUN_CMD="$DIRNAME/runjboss.sh -b $BINDADDR"
-else
-   RUN_CMD="$JBOSS_HOME/bin/standalone.sh"
-   export LAUNCH_JBOSS_IN_BACKGROUND="true"
-   export JBOSS_PIDFILE=$PIDFILE
-fi
+RUN_CMD="$JBOSS_HOME/bin/standalone.sh"
+export LAUNCH_JBOSS_IN_BACKGROUND="true"
+export JBOSS_PIDFILE=$PIDFILE
+
 
 #
 # Helper to complain.

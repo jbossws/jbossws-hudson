@@ -3,7 +3,7 @@
   <builders class="vector"/>
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
-      <childProjects>AS-TESTS-AS-6.0.0</childProjects>
+      <childProjects>AS-7.1.0</childProjects>
       <threshold>
         <name>UNSTABLE</name>
         <ordinal>1</ordinal>
@@ -25,6 +25,6 @@
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <description>Run all AS webservice testsuites against jbossws-@version.id@</description>
+  <description>Builds all AS servers that have not been tagged yet (hence might have daily changes)</description>
   <actions class="vector"/>
 </project>

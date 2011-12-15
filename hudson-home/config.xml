@@ -36,7 +36,6 @@
   <tr><th align=left>JBossWS Native:</th><td>@hudson.native.url@</td></tr>
   <tr><th align=left>JBossWS CXF:</th><td>@hudson.cxf.url@</td></tr>
   <tr><td colspan=2></td></tr>
-  <tr><th align=left>@hudson.jboss600.build@</th><td>-r@hudson.jboss600.rev@ @hudson.jboss600.url@</td></tr>
   <tr><th align=left>@hudson.jboss700.build@</th><td>-r@hudson.jboss700.rev@ @hudson.jboss700.url@</td></tr>
   <tr><th align=left>@hudson.jboss701.build@</th><td>-r@hudson.jboss701.rev@ @hudson.jboss701.url@</td></tr>
   <tr><th align=left>@hudson.jboss702.build@</th><td>-r@hudson.jboss702.rev@ @hudson.jboss702.url@</td></tr>
@@ -56,7 +55,7 @@
       <jobNames class="tree-set">
         <no-comparator/>
         <string>AS-ALL</string>
-        <string>AS-6.0.0</string>
+        <string>AS-LIGHT</string>
         <string>AS-7.0.0</string>
         <string>AS-7.0.1</string>
         <string>AS-7.0.2</string>
@@ -70,24 +69,6 @@
       </description>
     </view>
 
-    <!-- AS Tests -->
-    <view>
-      <owner reference="../../.."/>
-      <jobNames class="tree-set">
-        <no-comparator/>
-        <string>AS-TESTS-ALL</string>
-        <string>AS-TESTS-AS-6.0.0</string>
-      </jobNames>
-      <name>AS Tests</name>
-      <description>
-        <![CDATA[
-  Run the JBossAS webservice testsuite.
-  <p/>
-  Make sure you have sucessfuly build the <a href="/hudson/view/Target%20Container">Target Container</a>
-]]>
-      </description>
-    </view>
-
     <!-- Native Tests -->
     <view>
       <owner reference="../../.."/>
@@ -95,17 +76,14 @@
         <no-comparator/>
         <string>NATIVE-ALL</string>
         <string>NATIVE-LIGHT</string>
-        <string>NATIVE-CORE-AS-6.0.0-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.0.0-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.0.1-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.0.2-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.1.0-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-6.0.0-SUN-JDK-6</string>
         <string>NATIVE-BINDIST-AS-7.0.0-SUN-JDK-6</string>
         <string>NATIVE-BINDIST-AS-7.0.1-SUN-JDK-6</string>
         <string>NATIVE-BINDIST-AS-7.0.2-SUN-JDK-6</string>
         <string>NATIVE-BINDIST-AS-7.1.0-SUN-JDK-6</string>
-        <string>NATIVE-SRCDIST-AS-6.0.0-SUN-JDK-6</string>
         <string>NATIVE-SRCDIST-AS-7.0.0-SUN-JDK-6</string>
         <string>NATIVE-SRCDIST-AS-7.0.1-SUN-JDK-6</string>
         <string>NATIVE-SRCDIST-AS-7.0.2-SUN-JDK-6</string>
@@ -128,32 +106,26 @@
         <no-comparator/>
         <string>CXF-ALL</string>
         <string>CXF-LIGHT</string>
-        <string>CXF-CORE-AS-6.0.0-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.0-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.1-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.2-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.1.0-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-6.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.1-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.2-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.1.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-6.0.0-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.0-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.1-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.2-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.1.0-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-6.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.1-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.2-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.1.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-SRCDIST-AS-6.0.0-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-7.0.0-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-7.0.1-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-7.0.2-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-7.1.0-SUN-JDK-6</string>
-        <string>CXF-SRCDIST-AS-6.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-7.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-7.0.1-SPRING-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-7.0.2-SPRING-SUN-JDK-6</string>
@@ -175,33 +147,27 @@
       <jobNames class="tree-set">
         <no-comparator/>
         <string>CXF-LIGHT</string>
-        <string>CXF-CORE-AS-6.0.0-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.0-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.1-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.2-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.1.0-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-6.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.1-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.0.2-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.1.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-6.0.0-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.0-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.1-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.2-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.1.0-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-6.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.0-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.1-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.0.2-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.1.0-SPRING-SUN-JDK-6</string>
         <string>NATIVE-LIGHT</string>
-        <string>NATIVE-CORE-AS-6.0.0-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.0.0-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.0.1-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.0.2-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.1.0-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-6.0.0-SUN-JDK-6</string>
         <string>NATIVE-BINDIST-AS-7.0.0-SUN-JDK-6</string>
         <string>NATIVE-BINDIST-AS-7.0.1-SUN-JDK-6</string>
         <string>NATIVE-BINDIST-AS-7.0.2-SUN-JDK-6</string>
