@@ -20,7 +20,7 @@
   <artifactId>jbossws-hudson</artifactId>
   <packaging>pom</packaging>
   <description>JBossWS Hudson Integration</description>
-  <version>4.0.1-SNAPSHOT</version>
+  <version>4.0.2-SNAPSHOT</version>
 
   <!-- Parent -->
   <parent>
