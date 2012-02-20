@@ -76,7 +76,7 @@ ensureRunningJBoss() {
 #    fi
 #  else
 #    echo "There's no admin console for AS7 yet"
-    sleep 20
+    sleep 5
 #  fi
 }
 

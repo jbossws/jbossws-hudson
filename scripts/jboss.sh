@@ -35,22 +35,27 @@ case "$CMD" in
 start)
     # This version of run.sh obtains the pid of the JVM and saves it as jboss.pid
     # It relies on bash specific features
-    /bin/bash $RUN_CMD &
+    /bin/bash $RUN_CMD >/dev/null 2>/dev/null &
     ;;
 stop)
     if [ -f "$PIDFILE" ]; then
        pid=`cat "$PIDFILE"`
-       echo "kill pid: $pid"
-       kill $pid
+       #find out the pid of the shell script that started AS and which should be in background now
+       shell_pid=$(ps -ef | awk '$2 ~ /\<'$pid'\>/ { print $3; }')
+       echo "kill pid: $shell_pid"
+       kill $shell_pid
        if [ "$?" -eq 0 ]; then
-         # process exists, wait for it to die, and force if not
-         sleep 20
-         kill -9 $pid &> /dev/null
+         sleep 10
+         kill -9 $shell_pid &> /dev/null
        fi
+       #try killing the AS process just in case it's still there
+       kill -9 $pid &> /dev/null
        rm "$PIDFILE"
     else
        warn "No pid found!"
     fi
+    echo "exiting stop method"
+    date
     ;;
 restart)
     $0 stop
