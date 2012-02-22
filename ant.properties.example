@@ -20,10 +20,6 @@ hudson.http.port=8180
 hudson.native.url=http://anonsvn.jboss.org/repos/jbossws/stack/native/trunk
 hudson.cxf.url=http://anonsvn.jboss.org/repos/jbossws/stack/cxf/trunk
 
-hudson.jboss700.url=https://github.com/jbossas/jboss-as
-hudson.jboss700.build=jboss-as-7.0.0.Final
-hudson.jboss700.rev=7.0.0.Final
-
 hudson.jboss701.url=https://github.com/jbossas/jboss-as
 hudson.jboss701.build=jboss-as-7.0.1.Final
 hudson.jboss701.rev=7.0.1.Final

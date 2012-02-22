@@ -4,11 +4,7 @@
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
       <childProjects>
-  CXF-CORE-AS-7.0.0-SUN-JDK-6
-
-, CXF-CORE-AS-7.0.0-SPRING-SUN-JDK-6
-
-, CXF-CORE-AS-7.0.1-SUN-JDK-6
+CXF-CORE-AS-7.0.1-SUN-JDK-6
 
 , CXF-CORE-AS-7.0.1-SPRING-SUN-JDK-6
 
@@ -19,10 +15,6 @@
 , CXF-CORE-AS-7.1.0-SUN-JDK-6
 
 , CXF-CORE-AS-7.1.0-SPRING-SUN-JDK-6
-
-, CXF-BINDIST-AS-7.0.0-SUN-JDK-6
-
-, CXF-BINDIST-AS-7.0.0-SPRING-SUN-JDK-6
 
 , CXF-BINDIST-AS-7.0.1-SUN-JDK-6
 
