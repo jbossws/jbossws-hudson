@@ -11,10 +11,6 @@ setupJBossHome() {
   rm -rf $WORKSPACE/jboss-as
   cp -r $JBOSS_INSTANCE $WORKSPACE/jboss-as
   export JBOSS_HOME=$WORKSPACE/jboss-as
-  if [[ $JBOSS_TARGET == jboss71* ]]; then
-    echo "Copying default mgmt-users.properties to AS..."
-    cp $STACK_DIR/etc/mgmt-users.properties $JBOSS_HOME/standalone/configuration
-  fi;
   # HACK if running cxf on AS71x, first install/update native
   if [ "$STACK_ID" = "cxf" ] && [[ $JBOSS_TARGET == jboss71* ]]; then
     echo "cxf stack with AS 71x, first installing native..."
