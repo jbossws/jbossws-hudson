@@ -13,17 +13,6 @@ setupJBossHome() {
   export JBOSS_HOME=$WORKSPACE/jboss-as
   echo "Overwriting default application-users.properties / application-roles.properties on AS..."
   cp $STACK_DIR/etc/application-*.properties $JBOSS_HOME/standalone/configuration
-  # HACK if running cxf on AS71x, first install/update native
-  if [ "$STACK_ID" = "cxf" ] && [[ $JBOSS_TARGET == jboss71* ]]; then
-    echo "cxf stack with AS 71x, first installing native..."
-    STACK_ID=native
-    ORIG_STACK_DIR=$STACK_DIR
-    STACK_DIR=$STACK_DIR/../../../NATIVE-BINDIST-AS-7.1.0-SUN-JDK-6/workspace/stack-native/
-    setupEnv
-    redeployBinaryDistribution
-    STACK_ID=cxf
-    STACK_DIR=$ORIG_STACK_DIR
-  fi;
 }
 
 setupEnv() {
