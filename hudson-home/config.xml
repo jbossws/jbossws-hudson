@@ -74,20 +74,9 @@
       <owner reference="../../.."/>
       <jobNames class="tree-set">
         <no-comparator/>
-        <string>NATIVE-ALL</string>
         <string>NATIVE-LIGHT</string>
-        <string>NATIVE-CORE-AS-7.0.2-SUN-JDK-6</string>
-        <string>NATIVE-CORE-AS-7.1.0-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.1.1-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.1.2-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-7.0.2-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-7.1.0-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-7.1.1-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-7.1.2-SUN-JDK-6</string>
-        <string>NATIVE-SRCDIST-AS-7.0.2-SUN-JDK-6</string>
-        <string>NATIVE-SRCDIST-AS-7.1.0-SUN-JDK-6</string>
-        <string>NATIVE-SRCDIST-AS-7.1.1-SUN-JDK-6</string>
-        <string>NATIVE-SRCDIST-AS-7.1.2-SUN-JDK-6</string>
       </jobNames>
       <name>Native Tests</name>
       <description>
@@ -164,14 +153,8 @@
         <string>CXF-BINDIST-AS-7.1.1-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.1.2-SPRING-SUN-JDK-6</string>
         <string>NATIVE-LIGHT</string>
-        <string>NATIVE-CORE-AS-7.0.2-SUN-JDK-6</string>
-        <string>NATIVE-CORE-AS-7.1.0-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.1.1-SUN-JDK-6</string>
         <string>NATIVE-CORE-AS-7.1.2-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-7.0.2-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-7.1.0-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-7.1.1-SUN-JDK-6</string>
-        <string>NATIVE-BINDIST-AS-7.1.2-SUN-JDK-6</string>
       </jobNames>
       <name>Working Days Tests</name>
       <description>
