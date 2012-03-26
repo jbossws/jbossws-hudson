@@ -61,7 +61,7 @@
       <command>MAVEN_OPTS=&quot;-Xmx1024m -Xms512m -XX:MaxPermSize=128m&quot;
 export MAVEN_OPTS
 
-./build.sh clean install -Dskip-download-sources -U -B</command>
+./build.sh clean install -Dskip-download-sources -DskipTests=true -U -B</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
