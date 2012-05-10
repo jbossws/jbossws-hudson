@@ -32,9 +32,9 @@ hudson.jboss712.url=https://github.com/jbossas/jboss-as
 hudson.jboss712.build=jboss-as-7.1.2.Final
 hudson.jboss712.rev=7.1.2.Final
 
-hudson.jboss712.url=https://github.com/jbossas/jboss-as
-hudson.jboss712.build=jboss-as-7.2.0.Alpha1-SNAPSHOT
-hudson.jboss712.rev=master
+hudson.jboss720.url=https://github.com/jbossas/jboss-as
+hudson.jboss720.build=jboss-as-7.2.0.Alpha1-SNAPSHOT
+hudson.jboss720.rev=master
 
 hudson.mail.recipients=
 hudson.smtp.host=localhost
