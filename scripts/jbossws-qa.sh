@@ -156,6 +156,10 @@ runTestsViaAnt() {
   ant $ENVIRONMENT tests-clean tests $TEST_OPTS 2>&1 | tee $WORKSPACE/tests.log
 }
 
+addTestQueue() {
+  $JBOSS_HOME/bin/jboss-cli.sh -c command="/subsystem=messaging/hornetq-server=default/jms-queue=testQueue/:add(entries=[\"queue/test\",\"java:jboss/exported/jms/queue/test\"])"
+}
+
 coreTestWithSpring() {
   setupJBossHome
   setupEnv
@@ -165,6 +169,7 @@ coreTestWithSpring() {
   removeJBossLogs
   startJBoss
   ensureRunningJBoss
+  addTestQueue
   logMavenDependencies
   runTestsViaMavenWithSpring
   copyTestLogs
@@ -199,6 +204,7 @@ binaryDistributionTestWithSpring() {
   removeJBossLogs
   startJBoss
   ensureRunningJBoss
+  addTestQueue
   runTestsViaAnt
   copyTestLogs
   stopJBoss
@@ -231,6 +237,7 @@ sourceDistributionTestWithSpring() {
   removeJBossLogs
   startJBoss
   ensureRunningJBoss
+  addTestQueue
   logMavenDependencies
   runTestsViaMavenWithSpring
   copyTestLogs
