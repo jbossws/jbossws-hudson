@@ -158,7 +158,9 @@ runTestsViaAnt() {
 
 addTestQueue() {
   sleep 10
-  $JBOSS_HOME/bin/jboss-cli.sh -c command="/subsystem=messaging/hornetq-server=default/jms-queue=testQueue/:add(entries=[\"queue/test\",\"java:jboss/exported/jms/queue/test\"])"
+  if [ "$JBOSS_TARGET" != "jboss710" ] && [ "$JBOSS_TARGET" != "jboss711" ]; then
+    $JBOSS_HOME/bin/jboss-cli.sh -c command="/subsystem=messaging/hornetq-server=default/jms-queue=testQueue/:add(entries=[\"queue/test\",\"java:jboss/exported/jms/queue/test\"])"
+  fi
 }
 
 coreTestWithSpring() {
