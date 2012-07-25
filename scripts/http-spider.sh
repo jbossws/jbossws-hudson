@@ -13,8 +13,8 @@
 #############################################################
 
 TIMEOUT=2           # wget timeout in sec
-SLEEP_TIME=10		# the actual sleep time in between test
-NUM_RETRIES=30 		# equals to 5 minutes before exit
+SLEEP_TIME=5		# the actual sleep time in between test
+NUM_RETRIES=60 		# equals to 5 minutes before exit
 
 if [ "x$1" = "x" ]; then
 	echo "Usage: http.sh <hostname:port> <output_dir>"		
