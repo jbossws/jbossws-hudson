@@ -53,18 +53,14 @@ removeJBossLogs() {
 }
 
 ensureRunningJBoss() {
-#  if [ -f $JBOSS_HOME/bin/run.sh ]; then
-#    $SCRIPTS_DIR/http-spider.sh $JBOSS_BIND_ADDRESS:8080 $WORKSPACE
-#    if [ -e $WORKSPACE/spider.failed ]; then
-#      tail -n 100 $JBOSS_HOME/server/$JBOSS_CONFIG/log/server.log
-#      stopJBoss
-#      copyJBossLogs
-#      exit 1
-#    fi
-#  else
-#    echo "There's no admin console for AS7 yet"
-    sleep 5
-#  fi
+    $SCRIPTS_DIR/http-spider.sh $JBOSS_BIND_ADDRESS:8080 $WORKSPACE
+    if [ -e $WORKSPACE/spider.failed ]; then
+      tail -n 100 $JBOSS_HOME/standalone/log/server.log
+      stopJBoss
+      copyJBossLogs
+      exit 1
+    fi
+#    sleep 5 
 }
 
 logMavenDependencies() {
