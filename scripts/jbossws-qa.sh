@@ -38,7 +38,9 @@ startJBoss() {
 }
 
 copyJBossLogs() {
-  cp $JBOSS_HOME/standalone/log/boot.log $WORKSPACE/jboss-boot.log
+  if [ -e $JBOSS_HOME/standalone/log/boot.log ]; then
+    cp $JBOSS_HOME/standalone/log/boot.log $WORKSPACE/jboss-boot.log
+  fi
   cp $JBOSS_HOME/standalone/log/server.log $WORKSPACE/jboss-server.log
 }
 
