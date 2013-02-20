@@ -4,9 +4,9 @@
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
       <childProjects>
-NATIVE-CORE-AS-7.1.3-SUN-JDK-6
+NATIVE-CORE-AS-7.2.0-SUN-JDK-6
 
-, NATIVE-CORE-AS-7.2.0-SUN-JDK-6
+, NATIVE-CORE-AS-8.0.0-SUN-JDK-6
       </childProjects>
       <threshold>
         <name>UNSTABLE</name>
