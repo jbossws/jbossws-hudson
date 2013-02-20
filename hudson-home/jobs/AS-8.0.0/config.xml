@@ -23,7 +23,7 @@
         <string>uploadpack</string>
         <string>git-upload-pack</string>
         <string>url</string>
-        <string>@hudson.jboss720.url@.git</string>
+        <string>@hudson.jboss800.url@.git</string>
         <string>tagopt</string>
         <string></string>
       </org.spearce.jgit.transport.RemoteConfig>
