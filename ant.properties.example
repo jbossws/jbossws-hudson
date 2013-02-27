@@ -9,7 +9,7 @@ jboss.repository=http://repository.jboss.org
 jboss.bind.address=localhost
 
 # JDK settings
-java.home.sun.jdk6=/usr/java/jdk1.6
+java.home.sun.jdk6=/usr/java/jdk1.7
 
 # Hudson QA Environment
 hudson.root=/data/workspace
