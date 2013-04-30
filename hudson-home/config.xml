@@ -76,7 +76,6 @@
         <no-comparator/>
         <string>NATIVE-LIGHT</string>
         <string>NATIVE-CORE-AS-7.2.0-SUN-JDK-6</string>
-        <string>NATIVE-CORE-AS-8.0.0-SUN-JDK-6</string>
       </jobNames>
       <name>Native Tests</name>
       <description>
@@ -154,7 +153,6 @@
         <string>CXF-BINDIST-AS-8.0.0-SPRING-SUN-JDK-6</string>
         <string>NATIVE-LIGHT</string>
         <string>NATIVE-CORE-AS-7.2.0-SUN-JDK-6</string>
-        <string>NATIVE-CORE-AS-8.0.0-SUN-JDK-6</string>
       </jobNames>
       <name>Working Days Tests</name>
       <description>
