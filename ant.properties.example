@@ -33,7 +33,7 @@ hudson.jboss720.build=jboss-as-7.2.0.Final
 hudson.jboss720.rev=7.2.0.Final-prerelease1
 
 hudson.jboss800.url=https://github.com/wildfly/wildfly
-hudson.jboss800.build=wildfly-8.0.0.Alpha2-SNAPSHOT
+hudson.jboss800.build=wildfly-8.0.0.Alpha3-SNAPSHOT
 hudson.jboss800.rev=master
 
 hudson.mail.recipients=
