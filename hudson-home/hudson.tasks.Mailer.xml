@@ -2,6 +2,6 @@
 <hudson.tasks.Mailer-DescriptorImpl>
   <defaultSuffix></defaultSuffix>
   <hudsonUrl>http://@hudson.host@:@hudson.http.port@/hudson/</hudsonUrl>
-  <adminAddress>richard.opalka@jboss.com</adminAddress>
+  <adminAddress>asoldano@redhat.com</adminAddress>
   <smtpHost>@hudson.smtp.host@</smtpHost>
 </hudson.tasks.Mailer-DescriptorImpl>
