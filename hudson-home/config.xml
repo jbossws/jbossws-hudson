@@ -60,6 +60,7 @@
         <string>AS-7.1.3</string>
         <string>AS-7.2.0</string>
         <string>AS-8.0.0</string>
+        <string>AS-8.0.0-SECMGR</string>
       </jobNames>
       <name>AS Builds</name>
       <description>
@@ -98,6 +99,7 @@
         <string>CXF-CORE-AS-7.1.3-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.2.0-SUN-JDK-6</string>
         <string>CXF-CORE-AS-8.0.0-SUN-JDK-6</string>
+        <string>CXF-CORE-AS-8.0.0-SECMGR</string>
         <string>CXF-CORE-AS-7.1.2-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.1.3-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.2.0-SPRING-SUN-JDK-6</string>
@@ -139,6 +141,7 @@
         <string>CXF-CORE-AS-7.1.3-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.2.0-SUN-JDK-6</string>
         <string>CXF-CORE-AS-8.0.0-SUN-JDK-6</string>
+        <string>CXF-CORE-AS-8.0.0-SECMGR</string>
         <string>CXF-CORE-AS-7.1.2-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.1.3-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-7.2.0-SPRING-SUN-JDK-6</string>

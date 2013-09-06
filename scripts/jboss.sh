@@ -19,7 +19,8 @@ if [ -f "$JBOSS_HOME/standalone/configuration/standalone-full.xml" ]; then
    cp $JBOSS_HOME/standalone/configuration/standalone-full.xml $JBOSS_HOME/standalone/configuration/standalone.xml
 fi
 
-RUN_CMD="$JBOSS_HOME/bin/standalone.sh"
+#workaround for WSDL4J permissions bug, to be fixed
+RUN_CMD="$JBOSS_HOME/bin/standalone.sh -Djavax.wsdl.factory.WSDLFactory=com.ibm.wsdl.factory.WSDLFactoryImpl"
 export LAUNCH_JBOSS_IN_BACKGROUND="true"
 export JBOSS_PIDFILE=$PIDFILE
 
