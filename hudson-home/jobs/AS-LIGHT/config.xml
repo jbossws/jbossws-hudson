@@ -25,6 +25,6 @@
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <description>Builds all AS servers that have not been tagged yet (hence might have daily changes)</description>
+  <description>Builds all application servers that have not been tagged yet (hence might have daily changes)</description>
   <actions class="vector"/>
 </project>

@@ -3,7 +3,7 @@
   <builders class="vector"/>
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
-      <childProjects>AS-ALL, NATIVE-LIGHT, CXF-ALL, SWITCH-ALL</childProjects>
+      <childProjects>AS-ALL, CXF-ALL</childProjects>
       <threshold>
         <name>UNSTABLE</name>
         <ordinal>1</ordinal>
