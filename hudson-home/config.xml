@@ -37,6 +37,7 @@
   <tr><td colspan=2></td></tr>
   <tr><th align=left>@hudson.jboss720.build@</th><td>-r@hudson.jboss720.rev@ @hudson.jboss720.url@</td></tr>
   <tr><th align=left>@hudson.jboss800.build@</th><td>-r@hudson.jboss800.rev@ @hudson.jboss800.url@</td></tr>
+  <tr><th align=left>@hudson.jboss801.build@</th><td>-r@hudson.jboss801.rev@ @hudson.jboss801.url@</td></tr>
   <tr><td colspan=2></td></tr>
   </table>
 ]]>
@@ -75,16 +76,23 @@
         <string>CXF-CORE-AS-7.2.0-SUN-JDK-6</string>
         <string>CXF-CORE-AS-8.0.0-SUN-JDK-6</string>
         <string>CXF-CORE-AS-8.0.0-SECMGR</string>
+        <string>CXF-CORE-AS-8.0.1-SUN-JDK-6</string>
+        <string>CXF-CORE-AS-8.0.1-SECMGR</string>
         <string>CXF-CORE-AS-7.2.0-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-8.0.0-SPRING-SUN-JDK-6</string>
+        <string>CXF-CORE-AS-8.0.1-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.2.0-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-8.0.0-SUN-JDK-6</string>
+        <string>CXF-BINDIST-AS-8.0.1-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.2.0-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-8.0.0-SPRING-SUN-JDK-6</string>
+        <string>CXF-BINDIST-AS-8.0.1-SPRING-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-7.2.0-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-8.0.0-SUN-JDK-6</string>
+        <string>CXF-SRCDIST-AS-8.0.1-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-7.2.0-SPRING-SUN-JDK-6</string>
         <string>CXF-SRCDIST-AS-8.0.0-SPRING-SUN-JDK-6</string>
+        <string>CXF-SRCDIST-AS-8.0.1-SPRING-SUN-JDK-6</string>
       </jobNames>
       <name>CXF Tests</name>
       <description>
@@ -105,12 +113,17 @@
         <string>CXF-CORE-AS-7.2.0-SUN-JDK-6</string>
         <string>CXF-CORE-AS-8.0.0-SUN-JDK-6</string>
         <string>CXF-CORE-AS-8.0.0-SECMGR</string>
+        <string>CXF-CORE-AS-8.0.1-SUN-JDK-6</string>
+        <string>CXF-CORE-AS-8.0.1-SECMGR</string>
         <string>CXF-CORE-AS-7.2.0-SPRING-SUN-JDK-6</string>
         <string>CXF-CORE-AS-8.0.0-SPRING-SUN-JDK-6</string>
+        <string>CXF-CORE-AS-8.0.1-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.2.0-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-8.0.0-SUN-JDK-6</string>
+        <string>CXF-BINDIST-AS-8.0.1-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-7.2.0-SPRING-SUN-JDK-6</string>
         <string>CXF-BINDIST-AS-8.0.0-SPRING-SUN-JDK-6</string>
+        <string>CXF-BINDIST-AS-8.0.1-SPRING-SUN-JDK-6</string>
       </jobNames>
       <name>Working Days Tests</name>
       <description>
