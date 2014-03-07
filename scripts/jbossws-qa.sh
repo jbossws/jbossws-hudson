@@ -13,6 +13,11 @@ setupJBossHome() {
   export JBOSS_HOME=$WORKSPACE/jboss-as
   echo "Overwriting default application-users.properties / application-roles.properties on AS..."
   cp $STACK_DIR/etc/application-*.properties $JBOSS_HOME/standalone/configuration
+  #Debug use: remove this later
+  wget http://people.apache.org/~ema/cxf-api-2.7.10.jar
+  ls -all $JBOSS_HOME/modules/system/layers/base/org/apache/cxf/main
+  cp cxf-api-2.7.10.jar $JBOSS_HOME/modules/system/layers/base/org/apache/cxf/main
+  ls -all $JBOSS_HOME/modules/system/layers/base/org/apache/cxf/main/cxf-api-2.7.10.jar
 }
 
 setupEnv() {
