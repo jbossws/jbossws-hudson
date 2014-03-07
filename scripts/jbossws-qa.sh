@@ -34,26 +34,6 @@ stopJBoss() {
 }
 
 startJBoss() {
-  #Debug use: remove this later
-  if [ -e cxf-api-2.7.10.jar ]; then
-    rm  cxf-api-2.7.10.jar
-  fi
-  wget http://people.apache.org/~ema/cxf-api-2.7.10.jar
-  ls -all cxf-api-2.7.10.jar
-  ls -all $JBOSS_HOME/modules/system/layers/base/org/apache/cxf/main/
-  cp cxf-api-2.7.10.jar $JBOSS_HOME/modules/system/layers/base/org/apache/cxf/main/cxf-api.jar
-  ls -all $JBOSS_HOME/modules/system/layers/base/org/apache/cxf/main
-
-  if [ -e cxf-rt-ws-security-2.7.10.jar ]; then
-    rm  cxf-rt-ws-security-2.7.10.jar
-  fi
-  wget http://people.apache.org/~ema/cxf-rt-ws-security-2.7.10.jar
-  ls -all cxf-rt-ws-security-2.7.10.jar
-  ls -all $JBOSS_HOME/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-security.jar
-  cp cxf-rt-ws-security-2.7.10.jar $JBOSS_HOME/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-security.jar
-  ls -all $JBOSS_HOME/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-security.jar  
-  #Debug use END
-
   $SCRIPTS_DIR/jboss.sh $JBOSS_HOME start $JBOSS_BIND_ADDRESS
 }
 
