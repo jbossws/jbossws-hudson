@@ -35,7 +35,9 @@ stopJBoss() {
 
 startJBoss() {
   #Debug use: remove this later
-  rm  cxf-api-2.7.10.jar
+  if [ -e cxf-api-2.7.10.jar ]; then
+    rm  cxf-api-2.7.10.jar
+  fi
   wget http://people.apache.org/~ema/cxf-api-2.7.10.jar
   ls -all cxf-api-2.7.10.jar
   ls -all $JBOSS_HOME/modules/system/layers/base/org/apache/cxf/main/
