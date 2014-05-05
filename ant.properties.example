@@ -27,9 +27,9 @@ hudson.jboss800.url=https://github.com/wildfly/wildfly
 hudson.jboss800.build=wildfly-8.0.0.Final
 hudson.jboss800.rev=wildfly-8.0.0.Final
 
-hudson.jboss801.url=https://github.com/wildfly/wildfly
-hudson.jboss801.build=wildfly-8.0.1.Final-SNAPSHOT
-hudson.jboss801.rev=master
+hudson.jboss810.url=https://github.com/wildfly/wildfly
+hudson.jboss810.build=wildfly-8.1.0.Final-SNAPSHOT
+hudson.jboss810.rev=master
 
 hudson.mail.recipients=
 hudson.smtp.host=localhost
