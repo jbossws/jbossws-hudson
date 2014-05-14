@@ -6,7 +6,7 @@
 #
 # Module settings
 #
-MODULE=CXF-SRCDIST-AS-8.1.0
+MODULE=CXF-SRCDIST-AS-8.1.0-SPRING
 
 WORKSPACE=`pwd`
 STACK_ID=cxf
