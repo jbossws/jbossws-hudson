@@ -25,11 +25,11 @@ hudson.jboss720.rev=7.2.0.Final-prerelease1
 
 hudson.jboss800.url=https://github.com/wildfly/wildfly
 hudson.jboss800.build=wildfly-8.0.0.Final
-hudson.jboss800.rev=wildfly-8.0.0.Final
+hudson.jboss800.rev=8.0.0.Final
 
 hudson.jboss810.url=https://github.com/wildfly/wildfly
 hudson.jboss810.build=wildfly-8.1.0.CR2
-hudson.jboss810.rev=wildfly-8.1.0.CR2
+hudson.jboss810.rev=8.1.0.CR2
 
 hudson.jboss900.url=https://github.com/wildfly/wildfly
 hudson.jboss900.build=wildfly-9.0.0.Alpha1-SNAPSHOT
