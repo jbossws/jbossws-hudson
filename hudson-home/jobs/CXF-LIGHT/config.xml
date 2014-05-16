@@ -4,11 +4,7 @@
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
       <childProjects>
-CXF-CORE-AS-7.2.0
-
-, CXF-CORE-AS-7.2.0-SPRING
-
-, CXF-CORE-AS-8.0.0
+CXF-CORE-AS-8.0.0
 
 , CXF-CORE-AS-8.1.0
 
@@ -25,10 +21,6 @@ CXF-CORE-AS-7.2.0
 , CXF-CORE-AS-8.1.0-SECMGR
 
 , CXF-CORE-AS-9.0.0-SECMGR
-
-, CXF-BINDIST-AS-7.2.0
-
-, CXF-BINDIST-AS-7.2.0-SPRING
 
 , CXF-BINDIST-AS-8.0.0
 
