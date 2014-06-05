@@ -13,7 +13,7 @@ java.home.sun.jdk6=/usr/java/jdk1.7
 
 # Hudson QA Environment
 hudson.root=/data/workspace
-hudson.host=jbossws.jboss.org
+hudson.host=jbossws-qa.jboss.org
 hudson.admin.port=8150
 hudson.http.port=8180
 
