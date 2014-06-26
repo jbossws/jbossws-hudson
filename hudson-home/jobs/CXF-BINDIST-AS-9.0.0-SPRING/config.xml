@@ -16,7 +16,7 @@ STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS=
 JBOSS_TARGET=wildfly900
 JBOSS_BIND_ADDRESS=@jboss.bind.address@
-JBOSS_INSTANCE=@hudson.home@/jobs/AS-9.0.0/workspace/build/target/@hudson.jboss900.build@
+JBOSS_INSTANCE=@hudson.home@/jobs/AS-9.0.0/workspace/dist/target/@hudson.jboss900.build@
 
 #
 # load test functions
