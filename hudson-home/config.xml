@@ -37,6 +37,7 @@
   <tr><td colspan=2></td></tr>
   <tr><th align=left>@hudson.jboss800.build@</th><td>-r@hudson.jboss800.rev@ @hudson.jboss800.url@</td></tr>
   <tr><th align=left>@hudson.jboss810.build@</th><td>-r@hudson.jboss810.rev@ @hudson.jboss810.url@</td></tr>
+  <tr><th align=left>@hudson.jboss820.build@</th><td>-r@hudson.jboss820.rev@ @hudson.jboss820.url@</td></tr>
   <tr><th align=left>@hudson.jboss900.build@</th><td>-r@hudson.jboss900.rev@ @hudson.jboss900.url@</td></tr>
   <tr><td colspan=2></td></tr>
   </table>
@@ -54,10 +55,9 @@
         <no-comparator/>
         <string>AS-ALL</string>
         <string>AS-LIGHT</string>
-        <string>AS-8.0.0</string>
         <string>AS-8.0.0-SECMGR</string>
-        <string>AS-8.1.0</string>
         <string>AS-8.1.0-SECMGR</string>
+        <string>AS-8.2.0-SECMGR</string>
         <string>AS-9.0.0</string>
         <string>AS-9.0.0-SECMGR</string>
       </jobNames>
@@ -75,65 +75,23 @@
       <jobNames class="tree-set">
         <no-comparator/>
         <string>CXF-ALL</string>
-        <string>CXF-LIGHT</string>
-        <string>CXF-CORE-AS-8.0.0-SUN-JDK-6</string>
+        <string>CXF-CORE-AS-8.0.0</string>
         <string>CXF-CORE-AS-8.0.0-SECMGR</string>
-        <string>CXF-CORE-AS-8.1.0-SUN-JDK-6</string>
+        <string>CXF-CORE-AS-8.1.0</string>
+        <string>CXF-CORE-AS-8.2.0</string>
         <string>CXF-CORE-AS-8.1.0-SECMGR</string>
-        <string>CXF-CORE-AS-9.0.0-SUN-JDK-6</string>
+        <string>CXF-CORE-AS-8.2.0-SECMGR</string>
+        <string>CXF-CORE-AS-9.0.0</string>
         <string>CXF-CORE-AS-9.0.0-SECMGR</string>
-        <string>CXF-CORE-AS-8.0.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-8.1.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-9.0.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-8.0.0-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-8.1.0-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-9.0.0-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-8.0.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-8.1.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-9.0.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-SRCDIST-AS-8.0.0-SUN-JDK-6</string>
-        <string>CXF-SRCDIST-AS-8.1.0-SUN-JDK-6</string>
-        <string>CXF-SRCDIST-AS-9.0.0-SUN-JDK-6</string>
-        <string>CXF-SRCDIST-AS-8.0.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-SRCDIST-AS-8.1.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-SRCDIST-AS-9.0.0-SPRING-SUN-JDK-6</string>
+        <string>CXF-CORE-AS-8.0.0-SPRING</string>
+        <string>CXF-CORE-AS-8.1.0-SPRING</string>
+        <string>CXF-CORE-AS-8.2.0-SPRING</string>
+        <string>CXF-CORE-AS-9.0.0-SPRING</string>
       </jobNames>
       <name>CXF Tests</name>
       <description>
         <![CDATA[
   Run the CXF testsuite.
-  <p/>
-  Make sure you have sucessfuly build the <a href="/hudson/view/Target%20Container">Target Container</a>
-]]>
-      </description>
-    </view>
-
-    <!-- Working days tests-->
-    <view>
-      <owner reference="../../.."/>
-      <jobNames class="tree-set">
-        <no-comparator/>
-        <string>CXF-LIGHT</string>
-        <string>CXF-CORE-AS-8.0.0-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-8.0.0-SECMGR</string>
-        <string>CXF-CORE-AS-8.1.0-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-9.0.0-SECMGR</string>
-        <string>CXF-CORE-AS-9.0.0-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-8.1.0-SECMGR</string>
-        <string>CXF-CORE-AS-8.0.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-8.1.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-CORE-AS-9.0.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-8.0.0-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-8.1.0-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-9.0.0-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-8.0.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-8.1.0-SPRING-SUN-JDK-6</string>
-        <string>CXF-BINDIST-AS-9.0.0-SPRING-SUN-JDK-6</string>
-      </jobNames>
-      <name>Working Days Tests</name>
-      <description>
-        <![CDATA[
-  Run the working days tests; these include Core and Distro tests for all stacks.
   <p/>
   Make sure you have sucessfuly build the <a href="/hudson/view/Target%20Container">Target Container</a>
 ]]>

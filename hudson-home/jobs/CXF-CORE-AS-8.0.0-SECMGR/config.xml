@@ -15,7 +15,6 @@ SCRIPTS_DIR=$WORKSPACE/hudson-scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS=-Dsecmgr=true
 JBOSS_TARGET=wildfly800
-JBOSS_BIND_ADDRESS=@jboss.bind.address@
 JBOSS_INSTANCE=@hudson.home@/jobs/AS-8.0.0-SECMGR/workspace/build/target/@hudson.jboss800.build@
 
 #

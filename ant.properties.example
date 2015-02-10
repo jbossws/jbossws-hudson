@@ -17,7 +17,7 @@ hudson.host=jbossws-qa.jboss.org
 hudson.admin.port=8150
 hudson.http.port=8180
 
-hudson.cxf.url=http://anonsvn.jboss.org/repos/jbossws/stack/cxf/trunk
+hudson.cxf.url=http://anonsvn.jboss.org/repos/jbossws/stack/cxf/branches/arquillian
 
 hudson.jboss800.url=https://github.com/wildfly/wildfly
 hudson.jboss800.build=wildfly-8.0.0.Final
@@ -26,6 +26,10 @@ hudson.jboss800.rev=8.0.0.Final
 hudson.jboss810.url=https://github.com/wildfly/wildfly
 hudson.jboss810.build=wildfly-8.1.0.Final
 hudson.jboss810.rev=8.1.0.Final
+
+hudson.jboss820.url=https://github.com/wildfly/wildfly
+hudson.jboss820.build=wildfly-8.2.0.Final
+hudson.jboss820.rev=8.2.0.Final
 
 hudson.jboss900.url=https://github.com/wildfly/wildfly
 hudson.jboss900.build=wildfly-9.0.0.Alpha2-SNAPSHOT
