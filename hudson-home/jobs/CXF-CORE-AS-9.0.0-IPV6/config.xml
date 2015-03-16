@@ -13,7 +13,7 @@ STACK_ID=cxf
 JAVA_HOME=@java.home.sun.jdk6@
 SCRIPTS_DIR=$WORKSPACE/hudson-scripts
 STACK_DIR=$WORKSPACE/stack-cxf
-TEST_OPTS="-Djboss.bind.address=[::1] -DadditionalJvmArgs=\"-Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=true\" -Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=true"
+TEST_OPTS="-Djboss.bind.address=[::1] -Dipv6"
 JBOSS_TARGET=wildfly900
 JBOSS_INSTANCE=@hudson.home@/jobs/AS-9.0.0/workspace/dist/target/@hudson.jboss900.build@
 

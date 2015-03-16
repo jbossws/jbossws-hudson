@@ -81,9 +81,12 @@
         <string>CXF-CORE-AS-8.1.0</string>
         <string>CXF-CORE-AS-8.2.0</string>
         <string>CXF-CORE-AS-8.1.0-SECMGR</string>
+        <string>CXF-CORE-AS-8.1.0-IPV6</string>
         <string>CXF-CORE-AS-8.2.0-SECMGR</string>
+        <string>CXF-CORE-AS-8.2.0-IPV6</string>
         <string>CXF-CORE-AS-9.0.0</string>
         <string>CXF-CORE-AS-9.0.0-SECMGR</string>
+        <string>CXF-CORE-AS-9.0.0-IPV6</string>
         <string>CXF-CORE-AS-8.0.0-SPRING</string>
         <string>CXF-CORE-AS-8.1.0-SPRING</string>
         <string>CXF-CORE-AS-8.2.0-SPRING</string>
