@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <builders class="vector">
+    <hudson.tasks.Shell>
+      <command>
+#
+# Module settings
+#
+MODULE=CXF-CORE-AS-8.0.0-IPV6
+
+WORKSPACE=`pwd`
+STACK_ID=cxf
+JAVA_HOME=@java.home.sun.jdk6@
+SCRIPTS_DIR=$WORKSPACE/hudson-scripts
+STACK_DIR=$WORKSPACE/stack-cxf
+TEST_OPTS=-Djboss.bind.address=[::1] -DadditionalJvmArgs="-Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=true" -Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=true
+JBOSS_TARGET=wildfly800
+JBOSS_INSTANCE=@hudson.home@/jobs/AS-8.0.0-SECMGR/workspace/build/target/@hudson.jboss800.build@
+
+#
+# load test functions
+#
+. $SCRIPTS_DIR/jbossws-qa.sh
+
+#
+# execute core tests
+#
+coreTest
+
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers class="vector">
+    <hudson.tasks.junit.JUnitResultArchiver>
+      <testResults>stack-cxf/**/target/surefire-reports/*.xml</testResults>
+    </hudson.tasks.junit.JUnitResultArchiver>
+    <hudson.tasks.Mailer>
+      <recipients>@hudson.mail.recipients@</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>true</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers class="vector"/>
+  <scm class="hudson.scm.SubversionSCM">
+    <locations>
+      <hudson.scm.SubversionSCM-ModuleLocation>
+        <remote>@jbossws.hudson.url@/scripts</remote>
+        <local>hudson-scripts</local>
+      </hudson.scm.SubversionSCM-ModuleLocation>
+      <hudson.scm.SubversionSCM-ModuleLocation>
+        <remote>@hudson.cxf.url@</remote>
+        <local>stack-cxf</local>
+      </hudson.scm.SubversionSCM-ModuleLocation>
+    </locations>
+    <useUpdate>true</useUpdate>
+    <browser class="hudson.scm.browsers.FishEyeSVN">
+      <url>http://fisheye.jboss.com/browse/JBossWS/</url>
+      <rootModule></rootModule>
+    </browser>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <enableRemoteTrigger>false</enableRemoteTrigger>
+  <triggers class="vector"/>
+  <logRotator>
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss800.build@ using IPv6</description>
+  <actions class="vector"/>
+</project>

@@ -77,6 +77,7 @@
         <string>CXF-ALL</string>
         <string>CXF-CORE-AS-8.0.0</string>
         <string>CXF-CORE-AS-8.0.0-SECMGR</string>
+        <string>CXF-CORE-AS-8.0.0-IPV6</string>
         <string>CXF-CORE-AS-8.1.0</string>
         <string>CXF-CORE-AS-8.2.0</string>
         <string>CXF-CORE-AS-8.1.0-SECMGR</string>
