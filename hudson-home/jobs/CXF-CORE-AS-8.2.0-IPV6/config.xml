@@ -6,7 +6,7 @@
 #
 # Module settings
 #
-MODULE=CXF-CORE-AS-8.0.0-IPV6
+MODULE=CXF-CORE-AS-8.2.0-IPV6
 
 WORKSPACE=`pwd`
 STACK_ID=cxf
@@ -14,7 +14,7 @@ JAVA_HOME=@java.home.sun.jdk6@
 SCRIPTS_DIR=$WORKSPACE/hudson-scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS="-Djboss.bind.address=[::1] -DadditionalJvmArgs=\"-Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=true\" -Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=true"
-JBOSS_TARGET=wildfly800
+JBOSS_TARGET=wildfly820
 
 #
 # load test functions
@@ -67,6 +67,6 @@ coreTest
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss800.build@ using IPv6</description>
+  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss820.build@ with IPv6</description>
   <actions class="vector"/>
 </project>
