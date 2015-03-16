@@ -52,7 +52,8 @@ runTestsViaMavenWithSpring() {
 }
 
 runTestsViaMaven() {
-  mvn $ENVIRONMENT -Phudson,$JBOSS_TARGET $TEST_OPTS integration-test 2>&1 | tee $WORKSPACE/tests.log
+  echo "TEST_OPTS: $TEST_OPTS"
+  mvn $ENVIRONMENT -Phudson,$JBOSS_TARGET "$TEST_OPTS" integration-test 2>&1 | tee $WORKSPACE/tests.log
 }
 
 coreTestWithSpring() {
