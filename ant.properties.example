@@ -32,7 +32,7 @@ hudson.jboss820.build=wildfly-8.2.0.Final
 hudson.jboss820.rev=8.2.0.Final
 
 hudson.jboss900.url=https://github.com/wildfly/wildfly
-hudson.jboss900.build=wildfly-9.0.0.CR1-SNAPSHOT
+hudson.jboss900.build=wildfly-9.0.0.CR2-SNAPSHOT
 hudson.jboss900.rev=master
 
 hudson.mail.recipients=
