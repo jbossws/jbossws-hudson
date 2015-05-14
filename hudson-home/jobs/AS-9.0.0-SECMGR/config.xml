@@ -60,7 +60,7 @@
     <hudson.tasks.Shell>
       <command>MAVEN_OPTS=&quot;-Xmx1024m -Xms512m -XX:MaxPermSize=128m&quot;
 export MAVEN_OPTS
-export JAVA_HOME=@java.home.sun.jdk6@
+export JAVA_HOME=@java.home.sun.jdk8@
 ./build.sh clean install -Dskip-download-sources -DskipTests=true -Dsecurity.manager=yes -U -B</command>
     </hudson.tasks.Shell>
   </builders>

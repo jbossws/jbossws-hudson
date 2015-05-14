@@ -10,7 +10,7 @@ MODULE=CXF-CORE-AS-8.2.0
 
 WORKSPACE=`pwd`
 STACK_ID=cxf
-JAVA_HOME=@java.home.sun.jdk6@
+JAVA_HOME=@java.home.sun.jdk7@
 SCRIPTS_DIR=$WORKSPACE/hudson-scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS=
