@@ -25,7 +25,7 @@ JBOSS_INSTANCE=@hudson.home@/jobs/AS-9.0.0-SECMGR/workspace/dist/target/@hudson.
 #
 # execute core tests
 #
-coreTest
+coreTestWithSecMgr
 
 </command>
     </hudson.tasks.Shell>

@@ -27,6 +27,19 @@ setupEnv() {
   fi
 }
 
+setupSecMgrEnv() {
+  if [ "x$SECMGR" = "x" ]; then
+    export SECMGR=true
+  fi
+}
+
+unsetSecMgrEnv() {
+  if [ "x$SECMGR" != "x" ]; then
+    unset SECMGR
+  fi
+}
+
+
 logMavenDependencies() {
   cd $STACK_DIR
   mvn -Ptestsuite,spring,dist clean
@@ -74,5 +87,18 @@ coreTest() {
   copyTestLogs
   detectFailures
 }
+
+coreTestWithSecMgr() {
+  setupEnv
+  setupSecMgrEnv
+  ensureJavaExists
+  logMavenDependencies 
+  runTestsViaMaven
+  unsetSecMgrEnv
+  copyTestLogs
+  detectFailures
+}
+
+
 
 
