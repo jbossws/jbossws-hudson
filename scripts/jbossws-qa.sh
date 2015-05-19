@@ -27,19 +27,6 @@ setupEnv() {
   fi
 }
 
-setupSecMgrEnv() {
-  if [ "x$SECMGR" = "x" ]; then
-    export SECMGR=true
-  fi
-}
-
-unsetSecMgrEnv() {
-  if [ "x$SECMGR" != "x" ]; then
-    unset SECMGR
-  fi
-}
-
-
 logMavenDependencies() {
   cd $STACK_DIR
   mvn -Ptestsuite,spring,dist clean
@@ -69,6 +56,11 @@ runTestsViaMaven() {
   mvn $ENVIRONMENT -Phudson,$JBOSS_TARGET $TEST_OPTS integration-test 2>&1 | tee $WORKSPACE/tests.log
 }
 
+runTestsViaMavenWithSecMgr() {
+  echo "TEST_OPTS: $TEST_OPTS"
+  mvn $ENVIRONMENT -Phudson,$JBOSS_TARGET,secmgr $TEST_OPTS integration-test 2>&1 | tee $WORKSPACE/tests.log
+}
+
 coreTestWithSpring() {
   setupEnv
   ensureJavaExists
@@ -90,11 +82,9 @@ coreTest() {
 
 coreTestWithSecMgr() {
   setupEnv
-  setupSecMgrEnv
   ensureJavaExists
   logMavenDependencies 
-  runTestsViaMaven
-  unsetSecMgrEnv
+  runTestsViaMavenWithSecMgr
   copyTestLogs
   detectFailures
 }
