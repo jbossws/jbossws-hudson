@@ -35,7 +35,8 @@ logMavenDependencies() {
 
 copyTestLogs() {
   cat $WORKSPACE/tests.log | egrep FIXME\|FAILED | sort -u | tee $WORKSPACE/fixme.txt
-  cat $STACK_DIR/modules/dist/target/exclude-file/test-excludes-$JBOSS_TARGET.txt $WORKSPACE/fixme.txt | egrep "\[\S*]" > $WORKSPACE/errata-$JBOSS_TARGET.txt
+  cat $WORKSPACE/fixme.txt > $WORKSPACE/errata-$JBOSS_TARGET.txt
+  for i in `find $STACK_DIR -name surefire-reports`; do egrep -h "skipped message"\|FIXME $i/*|sort -u|sed 's/    <skipped message=\"//'|sed 's/\"\/>//' >> $WORKSPACE/errata-$JBOSS_TARGET.txt; done;
 }
 
 detectFailures() {
