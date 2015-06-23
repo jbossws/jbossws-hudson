@@ -36,6 +36,7 @@
 
     <property name="hudson.tomcat" value="${hudson.root}/jbossws-hudson-${version.id}/apache-tomcat"/>
     <property name="hudson.home" value="${hudson.root}/jbossws-hudson-${version.id}/hudson-home"/>
+    <property name="hudson.scripts" value="${hudson.root}/jbossws-hudson-${version.id}/scripts"/>
     <echo/>
     <echo message="hudson.root = ${hudson.root}"/>
     <echo message="hudson.home = ${hudson.home}"/>
@@ -104,14 +105,6 @@
   <target name="hudson-setup" depends="init-hudson,hudson-tomcat-setup" 
     description="Setup the Hudson QA environment">
 
-    <!-- get the svn url -->
-    <exec dir="${hudson.dir}" executable="svn" failonerror="true" output="${hudson.target.dir}/svn-info.xml">
-      <arg line="info"/>
-      <arg line="--xml"/>
-    </exec>
-    <xmlproperty file="${hudson.target.dir}/svn-info.xml"/>
-    <property name="jbossws.hudson.url" value="${info.entry.url}"/>
-
     <!-- Configure Hudson -->
     <copy todir="${hudson.home}" overwrite="true">
       <fileset dir="${hudson.dir}/hudson-home">
@@ -120,12 +113,21 @@
         <include name="*.xml"/>
       </fileset>
       <filterset>
-        <filter token="jbossws.hudson.url" value="${jbossws.hudson.url}"/>
         <filter token="hudson.home" value="${hudson.home}"/>
         <filter token="version.id" value="${version.id}"/>
         <filtersfile file="${hudson.dir}/ant.properties"/>
       </filterset>
     </copy>
+    <copy todir="${hudson.scripts}" overwrite="true">
+      <fileset dir="${hudson.dir}/scripts">
+        <include name="*"/>
+      </fileset>
+    </copy>
+    <chmod perm="+x">
+      <fileset dir="${hudson.scripts}">
+        <include name="*.sh"/>
+      </fileset>
+    </chmod>
     <copy todir="${hudson.home}/plugins" overwrite="true">
       <fileset dir="${thirdparty.dir}">
         <include name="git.hpi"/>

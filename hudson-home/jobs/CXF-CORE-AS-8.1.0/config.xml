@@ -11,7 +11,7 @@ MODULE=CXF-CORE-AS-8.1.0
 WORKSPACE=`pwd`
 STACK_ID=cxf
 JAVA_HOME=@java.home.sun.jdk7@
-SCRIPTS_DIR=$WORKSPACE/hudson-scripts
+SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS=
 JBOSS_TARGET=wildfly810
@@ -40,22 +40,46 @@ coreTest
     </hudson.tasks.Mailer>
   </publishers>
   <buildWrappers class="vector"/>
-  <scm class="hudson.scm.SubversionSCM">
-    <locations>
-      <hudson.scm.SubversionSCM-ModuleLocation>
-        <remote>@jbossws.hudson.url@/scripts</remote>
-        <local>hudson-scripts</local>
-      </hudson.scm.SubversionSCM-ModuleLocation>
-      <hudson.scm.SubversionSCM-ModuleLocation>
-        <remote>@hudson.cxf.url@</remote>
-        <local>stack-cxf</local>
-      </hudson.scm.SubversionSCM-ModuleLocation>
-    </locations>
-    <useUpdate>true</useUpdate>
-    <browser class="hudson.scm.browsers.FishEyeSVN">
-      <url>http://fisheye.jboss.com/browse/JBossWS/</url>
-      <rootModule></rootModule>
+  <scm class="hudson.plugins.git.GitSCM">
+    <configVersion>1</configVersion>
+    <remoteRepositories>
+      <org.spearce.jgit.transport.RemoteConfig>
+        <string>origin</string>
+        <int>5</int>
+        <string>fetch</string>
+        <string>+refs/heads/*:refs/remotes/origin/*</string>
+        <string>receivepack</string>
+        <string>git-upload-pack</string>
+        <string>uploadpack</string>
+        <string>git-upload-pack</string>
+        <string>url</string>
+        <string>@hudson.cxf.url@.git</string>
+        <string>tagopt</string>
+        <string></string>
+      </org.spearce.jgit.transport.RemoteConfig>
+    </remoteRepositories>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>@hudson.cxf.rev@</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <localBranch></localBranch>
+    <mergeOptions/>
+    <recursiveSubmodules>false</recursiveSubmodules>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <authorOrCommitter>false</authorOrCommitter>
+    <clean>false</clean>
+    <wipeOutWorkspace>false</wipeOutWorkspace>
+    <pruneBranches>false</pruneBranches>
+    <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
+    <gitTool>Default</gitTool>
+    <browser class="hudson.plugins.git.browser.GithubWeb">
+      <url>@hudson.cxf.url@</url>
     </browser>
+    <submoduleCfg class="list"/>
+    <relativeTargetDir>stack-cxf</relativeTargetDir>
+    <excludedRegions></excludedRegions>
+    <excludedUsers></excludedUsers>
   </scm>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
