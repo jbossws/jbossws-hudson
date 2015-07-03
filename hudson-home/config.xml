@@ -33,10 +33,10 @@
   <table>
   <tr><th align=left>JBossWS CXF:</th><td>-r@hudson.cxf.rev@ @hudson.cxf.url@</td></tr>
   <tr><td colspan=2></td></tr>
-  <tr><th align=left>@hudson.jboss800.build@</th><td>-r@hudson.jboss800.rev@ @hudson.jboss800.url@</td></tr>
   <tr><th align=left>@hudson.jboss810.build@</th><td>-r@hudson.jboss810.rev@ @hudson.jboss810.url@</td></tr>
   <tr><th align=left>@hudson.jboss820.build@</th><td>-r@hudson.jboss820.rev@ @hudson.jboss820.url@</td></tr>
   <tr><th align=left>@hudson.jboss900.build@</th><td>-r@hudson.jboss900.rev@ @hudson.jboss900.url@</td></tr>
+  <tr><th align=left>@hudson.jboss1000.build@</th><td>-r@hudson.jboss1000.rev@ @hudson.jboss1000.url@</td></tr>
   <tr><td colspan=2></td></tr>
   </table>
 ]]>
@@ -53,11 +53,11 @@
         <no-comparator/>
         <string>AS-ALL</string>
         <string>AS-LIGHT</string>
-        <string>AS-8.0.0-SECMGR</string>
         <string>AS-8.1.0-SECMGR</string>
         <string>AS-8.2.0-SECMGR</string>
-        <string>AS-9.0.0</string>
         <string>AS-9.0.0-SECMGR</string>
+        <string>AS-10.0.0</string>
+        <string>AS-10.0.0-SECMGR</string>
       </jobNames>
       <name>AS Builds</name>
       <description>
@@ -73,22 +73,22 @@
       <jobNames class="tree-set">
         <no-comparator/>
         <string>CXF-ALL</string>
-        <string>CXF-CORE-AS-8.0.0</string>
-        <string>CXF-CORE-AS-8.0.0-SECMGR</string>
-        <string>CXF-CORE-AS-8.0.0-IPV6</string>
         <string>CXF-CORE-AS-8.1.0</string>
         <string>CXF-CORE-AS-8.2.0</string>
-        <string>CXF-CORE-AS-8.1.0-SECMGR</string>
-        <string>CXF-CORE-AS-8.1.0-IPV6</string>
-        <string>CXF-CORE-AS-8.2.0-SECMGR</string>
-        <string>CXF-CORE-AS-8.2.0-IPV6</string>
         <string>CXF-CORE-AS-9.0.0</string>
+        <string>CXF-CORE-AS-10.0.0</string>
+        <string>CXF-CORE-AS-8.1.0-SECMGR</string>
+        <string>CXF-CORE-AS-8.2.0-SECMGR</string>
         <string>CXF-CORE-AS-9.0.0-SECMGR</string>
+        <string>CXF-CORE-AS-10.0.0-SECMGR</string>
+        <string>CXF-CORE-AS-8.1.0-IPV6</string>
+        <string>CXF-CORE-AS-8.2.0-IPV6</string>
         <string>CXF-CORE-AS-9.0.0-IPV6</string>
-        <string>CXF-CORE-AS-8.0.0-SPRING</string>
+        <string>CXF-CORE-AS-10.0.0-IPV6</string>
         <string>CXF-CORE-AS-8.1.0-SPRING</string>
         <string>CXF-CORE-AS-8.2.0-SPRING</string>
         <string>CXF-CORE-AS-9.0.0-SPRING</string>
+        <string>CXF-CORE-AS-10.0.0-SPRING</string>
       </jobNames>
       <name>CXF Tests</name>
       <description>

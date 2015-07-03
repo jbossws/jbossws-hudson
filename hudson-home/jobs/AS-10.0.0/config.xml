@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Builds WildFly 9.0.0</description>
+  <description>Builds WildFly 10.0.0</description>
   <logRotator>
     <daysToKeep>-1</daysToKeep>
     <numToKeep>20</numToKeep>
@@ -23,14 +23,14 @@
         <string>uploadpack</string>
         <string>git-upload-pack</string>
         <string>url</string>
-        <string>@hudson.jboss900.url@.git</string>
+        <string>@hudson.jboss1000.url@.git</string>
         <string>tagopt</string>
         <string></string>
       </org.spearce.jgit.transport.RemoteConfig>
     </remoteRepositories>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>@hudson.jboss900.rev@</name>
+        <name>@hudson.jboss1000.rev@</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <localBranch></localBranch>
@@ -44,7 +44,7 @@
     <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
     <gitTool>Default</gitTool>
     <browser class="hudson.plugins.git.browser.GithubWeb">
-      <url>@hudson.jboss900.url@</url>
+      <url>@hudson.jboss1000.url@</url>
     </browser>
     <submoduleCfg class="list"/>
     <relativeTargetDir></relativeTargetDir>
@@ -58,7 +58,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>MAVEN_OPTS=&quot;-Xmx1024m -Xms512m -XX:MaxPermSize=128m&quot;
+      <command>MAVEN_OPTS=&quot;-Xmx1024m -Xms512m&quot;
 export MAVEN_OPTS
 export JAVA_HOME=@java.home.sun.jdk8@
 ./build.sh clean install -Dskip-download-sources -DskipTests=true -U -B</command>
