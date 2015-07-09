@@ -29,7 +29,7 @@ setupEnv() {
 
 logMavenDependencies() {
   cd $STACK_DIR
-  mvn -Ptestsuite,spring,dist clean
+  mvn -Ptestsuite,dist clean
   mvn -P$JBOSS_TARGET dependency:tree | tee $WORKSPACE/dependency-tree.txt
 }
 
@@ -48,10 +48,6 @@ detectFailures() {
   fi
 }
 
-runTestsViaMavenWithSpring() {
-  mvn $ENVIRONMENT -Phudson,spring,$JBOSS_TARGET $TEST_OPTS integration-test 2>&1 | tee $WORKSPACE/tests.log
-}
-
 runTestsViaMaven() {
   echo "TEST_OPTS: $TEST_OPTS"
   mvn $ENVIRONMENT -Phudson,$JBOSS_TARGET $TEST_OPTS integration-test 2>&1 | tee $WORKSPACE/tests.log
@@ -60,16 +56,6 @@ runTestsViaMaven() {
 runTestsViaMavenWithSecMgr() {
   echo "TEST_OPTS: $TEST_OPTS"
   mvn $ENVIRONMENT -Phudson,$JBOSS_TARGET,wildfly9-secmgr $TEST_OPTS integration-test 2>&1 | tee $WORKSPACE/tests.log
-}
-
-coreTestWithSpring() {
-  setupEnv
-  ensureJavaExists
-#  addTestQueue TODO
-  logMavenDependencies
-  runTestsViaMavenWithSpring
-  copyTestLogs
-  detectFailures
 }
 
 coreTest() {
