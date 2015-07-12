@@ -10,7 +10,7 @@ MODULE=CXF-CORE-AS-8.1.0-SECMGR
 
 WORKSPACE=`pwd`
 STACK_ID=cxf
-JAVA_HOME=@java.home.sun.jdk7@
+JAVA_HOME=@java.home.sun.jdk8@
 SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS=-Dsecmgr=true
