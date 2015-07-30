@@ -21,20 +21,20 @@ hudson.http.port=8280
 hudson.cxf.url=https://github.com/jbossws/jbossws-cxf
 hudson.cxf.rev=jbossws-cxf-5.0.x
 
-hudson.jboss810.url=https://github.com/wildfly/wildfly
-hudson.jboss810.build=wildfly-8.1.0.Final
-hudson.jboss810.rev=8.1.0.Final
-
-hudson.jboss820.url=https://github.com/wildfly/wildfly
-hudson.jboss820.build=wildfly-8.2.0.Final
-hudson.jboss820.rev=8.2.0.Final
+hudson.jboss821.url=https://github.com/wildfly/wildfly
+hudson.jboss821.build=wildfly-8.2.1.Final
+hudson.jboss821.rev=8.2.1.Final
 
 hudson.jboss900.url=https://github.com/wildfly/wildfly
 hudson.jboss900.build=wildfly-9.0.0.Final
 hudson.jboss900.rev=9.0.0.Final
 
+hudson.jboss901.url=https://github.com/wildfly/wildfly
+hudson.jboss901.build=wildfly-9.0.1.Final
+hudson.jboss901.rev=9.0.1.Final
+
 hudson.jboss1000.url=https://github.com/wildfly/wildfly
-hudson.jboss1000.build=wildfly-10.0.0.Alpha5-SNAPSHOT
+hudson.jboss1000.build=wildfly-10.0.0.Beta1-SNAPSHOT
 hudson.jboss1000.rev=master
 
 hudson.mail.recipients=
