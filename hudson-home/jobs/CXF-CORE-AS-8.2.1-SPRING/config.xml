@@ -6,7 +6,7 @@
 #
 # Module settings
 #
-MODULE=CXF-CORE-AS-8.2.0-SPRING
+MODULE=CXF-CORE-AS-8.2.1-SPRING
 
 WORKSPACE=`pwd`
 STACK_ID=cxf
@@ -14,7 +14,7 @@ JAVA_HOME=@java.home.sun.jdk7@
 SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS=
-JBOSS_TARGET=wildfly820
+JBOSS_TARGET=wildfly821
 
 #
 # load test functions
@@ -91,6 +91,6 @@ coreTestWithSpring
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss820.build@ with SpringFramework libraires available</description>
+  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss821.build@ with SpringFramework libraires available</description>
   <actions class="vector"/>
 </project>
