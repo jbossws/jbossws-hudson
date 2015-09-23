@@ -15,7 +15,7 @@
   <property name="hudson.target.dir" value="${hudson.dir}/target"/>
 
   <!-- ================================================================== -->
-  <!-- Initialization                                                     -->
+  <!-- Initialization for Jenkins                                                   -->
   <!-- ================================================================== -->
 
   <target name="init">
@@ -62,8 +62,9 @@
   <target name="hudson-tomcat-setup" depends="init-hudson" unless="hudson.tomcat.available">
 
     <get src="http://archive.apache.org/dist/tomcat/tomcat-5/v${apache-tomcat}/bin/apache-tomcat-${apache-tomcat}.zip" dest="${thirdparty.dir}/apache-tomcat.zip" usetimestamp="true" verbose="true"/>
-    <get src="http://hudson-ci.org/downloads/war/archived/${sun-hudson}/hudson.war" dest="${thirdparty.dir}/hudson.war" usetimestamp="true" verbose="true"/>
-    <get src="http://hudson-ci.org/downloads/plugins/git/${git-plugin}/git.hpi" dest="${thirdparty.dir}/git.hpi" usetimestamp="true" verbose="true"/>
+    <get src="http://updates.jenkins-ci.org/download/war/${jenkins-ver}/jenkins.war" dest="${thirdparty.dir}/jenkins.war" usetimestamp="true" verbose="true"/>
+    <get src="http://updates.jenkins-ci.org/download/plugins/git/${git-plugin}/git.hpi" dest="${thirdparty.dir}/git.hpi" usetimestamp="true" verbose="true"/>
+    <get src="http://updates.jenkins-ci.org/download/plugins/git-client/${git-client-plugin}/git-client.hpi" dest="${thirdparty.dir}/git-client.hpi" usetimestamp="true" verbose="true"/>
 
     <mkdir dir="${hudson.root}"/>
     <unzip src="${thirdparty.dir}/apache-tomcat.zip" dest="${hudson.root}"/>
@@ -75,7 +76,7 @@
     </chmod>
 
     <!-- Configure Tomcat -->
-    <copy todir="${hudson.tomcat}/webapps" file="${thirdparty.dir}/hudson.war"/>
+    <copy todir="${hudson.tomcat}/webapps" file="${thirdparty.dir}/jenkins.war"/>
     <copy todir="${hudson.tomcat}" overwrite="true">
       <fileset dir="${hudson.dir}/apache-tomcat">
         <include name="**/*.xml"/>
@@ -85,6 +86,7 @@
         <filter token="hudson.home" value="${hudson.home}"/>
       </filterset>
     </copy>
+
   </target>
 
   <!--
@@ -92,11 +94,12 @@
   -->
   <target name="hudson-update" depends="init-hudson">
 
-    <get src="http://hudson-ci.org/downloads/war/${sun-hudson}/hudson.war" dest="${thirdparty.dir}/hudson.war" usetimestamp="true" verbose="true"/>
-    <get src="http://hudson-ci.org/downloads/plugins/git/${git-plugin}/git.hpi" dest="${thirdparty.dir}/git.hpi" usetimestamp="true" verbose="true"/>
+    <get src="https://updates.jenkins-ci.org/download/war/${jenkins-ver}/jenkins.war" dest="${thirdparty.dir}/jenkins.war" usetimestamp="true" verbose="true"/>
+    <get src="http://updates.jenkins-ci.org/download/plugins/git/${git-plugin}/git.hpi" dest="${thirdparty.dir}/git.hpi" usetimestamp="true" verbose="true"/>
+    <get src="http://updates.jenkins-ci.org/download/plugins/git-client/${git-client-plugin}/git-client.hpi" dest="${thirdparty.dir}/git-client.hpi" usetimestamp="true" verbose="true"/>
 
-    <delete dir="${hudson.tomcat}/webapps/hudson"/>
-    <copy todir="${hudson.tomcat}/webapps" file="${thirdparty.dir}/hudson.war"/>
+    <delete dir="${hudson.tomcat}/webapps/jenkins"/>
+    <copy todir="${hudson.tomcat}/webapps" file="${thirdparty.dir}/jenkins.war"/>
   </target>
 
   <!--
@@ -131,6 +134,11 @@
     <copy todir="${hudson.home}/plugins" overwrite="true">
       <fileset dir="${thirdparty.dir}">
         <include name="git.hpi"/>
+      </fileset>
+    </copy>
+    <copy todir="${hudson.home}/plugins" overwrite="true">
+      <fileset dir="${thirdparty.dir}">
+        <include name="git-client.hpi"/>
       </fileset>
     </copy>
 
