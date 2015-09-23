@@ -96,5 +96,24 @@
       </description>
     </view>
 
+    <!-- WISE-CORE Builds -->
+    <view>
+      <owner reference="../../.."/>
+      <jobNames class="tree-set">
+        <no-comparator/>
+        <string>WISE-ALL</string>
+        <string>WISE-CORE-AS-8.0.0</string>
+        <string>WISE-CORE-AS-8.1.0</string>
+        <string>WISE-CORE-AS-8.2.0</string>
+        <string>WISE-CORE-AS-9.0.0</string>
+      </jobNames>
+      <name>WISE-CORE Tests</name>
+      <description>
+        <![CDATA[
+  Run WISE-CORE tests.
+]]>
+      </description>
+    </view>
+
   </views>
 </hudson>
