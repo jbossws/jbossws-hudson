@@ -42,5 +42,6 @@ hudson.smtp.host=localhost
 
 # Hudson setup
 apache-tomcat=5.5.31
-sun-hudson=1.356
-git-plugin=1.1.4
+git-plugin=2.4.0
+git-client-plugin=1.19.0
+jenkins-ver=1.630
