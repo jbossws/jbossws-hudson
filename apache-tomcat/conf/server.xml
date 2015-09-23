@@ -44,8 +44,8 @@
       -->
       <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true" xmlValidation="false" xmlNamespaceAware="false">
         
-        <Context path="/hudson">
-          <Environment description="" name="HUDSON_HOME" type="java.lang.String" value="@hudson.home@"/>
+        <Context path="/jenkins">
+          <Environment description="" name="JENKINS_HOME" type="java.lang.String" value="@hudson.home@"/>
         </Context>
         
       </Host>
