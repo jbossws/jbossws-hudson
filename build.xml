@@ -65,6 +65,7 @@
     <get src="http://updates.jenkins-ci.org/download/war/${jenkins-ver}/jenkins.war" dest="${thirdparty.dir}/jenkins.war" usetimestamp="true" verbose="true"/>
     <get src="http://updates.jenkins-ci.org/download/plugins/git/${git-plugin}/git.hpi" dest="${thirdparty.dir}/git.hpi" usetimestamp="true" verbose="true"/>
     <get src="http://updates.jenkins-ci.org/download/plugins/git-client/${git-client-plugin}/git-client.hpi" dest="${thirdparty.dir}/git-client.hpi" usetimestamp="true" verbose="true"/>
+    <get src="http://updates.jenkins-ci.org/download/plugins/scm-api/${scm-api-plugin}/scm-api.hpi" dest="${thirdparty.dir}/scm-api.hpi" usetimestamp="true" verbose="true"/>
 
     <mkdir dir="${hudson.root}"/>
     <unzip src="${thirdparty.dir}/apache-tomcat.zip" dest="${hudson.root}"/>
@@ -97,6 +98,7 @@
     <get src="https://updates.jenkins-ci.org/download/war/${jenkins-ver}/jenkins.war" dest="${thirdparty.dir}/jenkins.war" usetimestamp="true" verbose="true"/>
     <get src="http://updates.jenkins-ci.org/download/plugins/git/${git-plugin}/git.hpi" dest="${thirdparty.dir}/git.hpi" usetimestamp="true" verbose="true"/>
     <get src="http://updates.jenkins-ci.org/download/plugins/git-client/${git-client-plugin}/git-client.hpi" dest="${thirdparty.dir}/git-client.hpi" usetimestamp="true" verbose="true"/>
+    <get src="http://updates.jenkins-ci.org/download/plugins/scm-api/${scm-api-plugin}/scm-api.hpi" dest="${thirdparty.dir}/scm-api.hpi" usetimestamp="true" verbose="true"/>
 
     <delete dir="${hudson.tomcat}/webapps/jenkins"/>
     <copy todir="${hudson.tomcat}/webapps" file="${thirdparty.dir}/jenkins.war"/>
@@ -139,6 +141,11 @@
     <copy todir="${hudson.home}/plugins" overwrite="true">
       <fileset dir="${thirdparty.dir}">
         <include name="git-client.hpi"/>
+      </fileset>
+    </copy>
+    <copy todir="${hudson.home}/plugins" overwrite="true">
+      <fileset dir="${thirdparty.dir}">
+        <include name="scm-api.hpi"/>
       </fileset>
     </copy>
 
