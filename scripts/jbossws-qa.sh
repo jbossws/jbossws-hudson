@@ -53,6 +53,11 @@ runTestsViaMaven() {
   mvn $ENVIRONMENT -Phudson,$JBOSS_TARGET $TEST_OPTS integration-test 2>&1 | tee $WORKSPACE/tests.log
 }
 
+runPerfTestsViaMaven() {
+  echo "TEST_OPTS: $TEST_OPTS"
+  mvn $ENVIRONMENT -P$JBOSS_TARGET,jmeter $TEST_OPTS -Dtest=Foo verify 2>&1 | tee $WORKSPACE/tests.log
+}
+
 runTestsViaMavenWithSecMgr() {
   echo "TEST_OPTS: $TEST_OPTS"
   mvn $ENVIRONMENT -Phudson,$JBOSS_TARGET,wildfly9-secmgr $TEST_OPTS integration-test 2>&1 | tee $WORKSPACE/tests.log
@@ -63,6 +68,15 @@ coreTest() {
   ensureJavaExists
   logMavenDependencies
   runTestsViaMaven
+  copyTestLogs
+  detectFailures
+}
+
+perfTest() {
+  setupEnv
+  ensureJavaExists
+  logMavenDependencies
+  runPerfTestsViaMaven
   copyTestLogs
   detectFailures
 }
