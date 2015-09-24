@@ -32,7 +32,7 @@
     <echo message="version.id=${version.id}"/>
   </target>
 
-  <target name="init-hudson" depends="init">
+  <target name="init-jenkins" depends="init">
 
     <property name="hudson.tomcat" value="${hudson.root}/jbossws-hudson-${version.id}/apache-tomcat"/>
     <property name="hudson.home" value="${hudson.root}/jbossws-hudson-${version.id}/hudson-home"/>
@@ -47,9 +47,9 @@
     <fail message="Hudson root not available" unless="hudson.root.available"/>
 
     <property name="hudson.username.${hudson.username}" value="true"/>
-    <fail message="Cannot use default hudson username: ${hudson.username}" if="hudson.username.changeme"/>
+    <fail message="Cannot use default Jenkins username: ${hudson.username}" if="hudson.username.changeme"/>
     <property name="hudson.password.${hudson.password}" value="true"/>
-    <fail message="Cannot use default hudson password: ${hudson.password}" if="hudson.password.changeme"/>
+    <fail message="Cannot use default Jenkins password: ${hudson.password}" if="hudson.password.changeme"/>
 
     <property name="thirdparty.dir" value="${hudson.target.dir}/thirdparty"/>
     <mkdir dir="${thirdparty.dir}"/>
@@ -57,9 +57,9 @@
   </target>
 
   <!--
-    Setup the Hudson Tomcat instance 
+    Setup the Jenkins Tomcat instance 
   -->
-  <target name="hudson-tomcat-setup" depends="init-hudson" unless="hudson.tomcat.available">
+  <target name="jenkins-tomcat-setup" depends="init-jenkins" unless="hudson.tomcat.available">
 
     <get src="http://archive.apache.org/dist/tomcat/tomcat-5/v${apache-tomcat}/bin/apache-tomcat-${apache-tomcat}.zip" dest="${thirdparty.dir}/apache-tomcat.zip" usetimestamp="true" verbose="true"/>
     <get src="http://updates.jenkins-ci.org/download/war/${jenkins-ver}/jenkins.war" dest="${thirdparty.dir}/jenkins.war" usetimestamp="true" verbose="true"/>
@@ -91,9 +91,9 @@
   </target>
 
   <!--
-    Update the Hudson version
+    Update the Jenkins version
   -->
-  <target name="hudson-update" depends="init-hudson">
+  <target name="jenkins-update" depends="init-jenkins">
 
     <get src="https://updates.jenkins-ci.org/download/war/${jenkins-ver}/jenkins.war" dest="${thirdparty.dir}/jenkins.war" usetimestamp="true" verbose="true"/>
     <get src="http://updates.jenkins-ci.org/download/plugins/git/${git-plugin}/git.hpi" dest="${thirdparty.dir}/git.hpi" usetimestamp="true" verbose="true"/>
@@ -105,12 +105,12 @@
   </target>
 
   <!--
-    Setup the Hudson QA environment
+    Setup the Jenkins QA environment
   -->
-  <target name="hudson-setup" depends="init-hudson,hudson-tomcat-setup" 
-    description="Setup the Hudson QA environment">
+  <target name="jenkins-setup" depends="init-jenkins,jenkins-tomcat-setup" 
+    description="Setup the Jenkins QA environment">
 
-    <!-- Configure Hudson -->
+    <!-- Configure Jenkins -->
     <copy todir="${hudson.home}" overwrite="true">
       <fileset dir="${hudson.dir}/hudson-home">
         <include name="jobs/*/config.xml"/>
@@ -151,14 +151,14 @@
 
     <echo/>
     <echo message="*************************************"/>
-    <echo message="* Hudson setup successfully         *"/>
-    <echo message="* ant hudson-start                  *"/>
+    <echo message="* Jenkins setup successfully        *"/>
+    <echo message="* ant jenkins-start                 *"/>
     <echo message="*************************************"/>
     <echo/>
 
   </target>
 
-  <target name="hudson-stop" depends="init-hudson" description="Stops the Hudson QA environment">
+  <target name="jenkins-stop" depends="init-jenkins" description="Stops the Jenkins QA environment">
 
     <exec executable="${hudson.tomcat}/bin/catalina.sh" failonerror="true">
       <arg line="stop"/>
@@ -166,14 +166,14 @@
 
     <echo/>
     <echo message="*************************************"/>
-    <echo message="* Hudson stopped successfully       *"/>
-    <echo message="* ant hudson-start                  *"/>
+    <echo message="* Jenkins stopped successfully      *"/>
+    <echo message="* ant jenkins-start                 *"/>
     <echo message="*************************************"/>
     <echo/>
 
   </target>
 
-  <target name="hudson-start" depends="init-hudson" description="Start the Hudson QA environment">
+  <target name="jenkins-start" depends="init-jenkins" description="Start the Jenkins QA environment">
 
     <property environment="env"/>
     <fail message="unset JBOSS_REPOSITORY=${env.JBOSS_REPOSITORY}" if="env.JBOSS_REPOSITORY"/>
@@ -186,8 +186,8 @@
 
     <echo/>
     <echo message="*************************************"/>
-    <echo message="* Hudson started successfully       *"/>
-    <echo message="* http://localhost:${hudson.http.port}/hudson      *"/>
+    <echo message="* Jenkins started successfully      *"/>
+    <echo message="* http://localhost:${hudson.http.port}/jenkins     *"/>
     <echo message="*************************************"/>
     <echo/>
 
