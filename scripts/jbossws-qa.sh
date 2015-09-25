@@ -55,7 +55,7 @@ runTestsViaMaven() {
 
 runPerfTestsViaMaven() {
   echo "TEST_OPTS: $TEST_OPTS"
-  mvn $ENVIRONMENT -P$JBOSS_TARGET,jmeter $TEST_OPTS -Dtest=Foo verify 2>&1 | tee $WORKSPACE/tests.log
+  mvn $ENVIRONMENT -P$JBOSS_TARGET,jmeter $TEST_OPTS verify 2>&1 | tee $WORKSPACE/tests.log
 }
 
 runTestsViaMavenWithSecMgr() {

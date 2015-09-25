@@ -13,7 +13,7 @@ STACK_ID=cxf
 JAVA_HOME=@java.home.sun.jdk8@
 SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
-TEST_OPTS=
+TEST_OPTS="-Dtest=Foo -Dquiet"
 JBOSS_TARGET=wildfly901
 
 #
