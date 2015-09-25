@@ -30,6 +30,13 @@ perfTest
     </hudson.tasks.Shell>
   </builders>
   <publishers class="vector">
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>stack-cxf/modules/testsuite/perf-tests/target/jmeter/results/TransactionsPerSecond.png</artifacts>
+      <allowEmptyArchive>false</allowEmptyArchive>
+      <onlyIfSuccessful>false</onlyIfSuccessful>
+      <fingerprint>false</fingerprint>
+      <defaultExcludes>true</defaultExcludes>
+    </hudson.tasks.ArtifactArchiver>
     <hudson.plugins.performance.PerformancePublisher plugin="performance@1.13">
       <errorFailedThreshold>2</errorFailedThreshold>
       <errorUnstableThreshold>1</errorUnstableThreshold>
