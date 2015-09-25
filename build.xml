@@ -186,7 +186,7 @@
     <fail message="unset JBOSS_REPOSITORY=${env.JBOSS_REPOSITORY}" if="env.JBOSS_REPOSITORY"/>
 
     <exec executable="${hudson.tomcat}/bin/catalina.sh" failonerror="true" output="${hudson.target.dir}/hudson.log">
-      <env key="CATALINA_OPTS" value="-Xmx512m -Djava.awt.headless=true"/>
+      <env key="CATALINA_OPTS" value="-Xmx768m -Djava.awt.headless=true"/>
       <env key="HUDSON_HOME" value="${hudson.home}"/>
       <arg line="start"/>
     </exec>
