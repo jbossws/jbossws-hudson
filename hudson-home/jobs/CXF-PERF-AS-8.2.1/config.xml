@@ -54,7 +54,7 @@ perfTest
       <modePerformancePerTestCase>true</modePerformancePerTestCase>
       <parsers>
         <hudson.plugins.performance.JMeterParser>
-          <glob>stack-cxf/modules/testsuite/perf-tests/target/jmeter/results/jbossws.jtl</glob>
+          <glob>stack-cxf/modules/testsuite/perf-tests/target/jmeter/results/jbossws-basic-pojo.jtl</glob>
         </hudson.plugins.performance.JMeterParser>
       </parsers>
       <modeThroughput>true</modeThroughput>
