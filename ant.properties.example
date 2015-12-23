@@ -34,7 +34,7 @@ hudson.jboss902.build=wildfly-9.0.2.Final
 hudson.jboss902.rev=9.0.2.Final
 
 hudson.jboss1000.url=https://github.com/wildfly/wildfly
-hudson.jboss1000.build=wildfly-10.0.0.CR4-SNAPSHOT
+hudson.jboss1000.build=wildfly-10.0.0.Final-SNAPSHOT
 hudson.jboss1000.rev=master
 
 hudson.mail.recipients=
