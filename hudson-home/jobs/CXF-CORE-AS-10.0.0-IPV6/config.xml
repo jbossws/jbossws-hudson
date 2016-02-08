@@ -15,7 +15,6 @@ SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS="-Djboss.bind.address=[::1] -Dipv6"
 JBOSS_TARGET=wildfly1000
-JBOSS_INSTANCE=@hudson.home@/jobs/AS-10.0.0/workspace/dist/target/@hudson.jboss1000.build@
 
 #
 # load test functions
