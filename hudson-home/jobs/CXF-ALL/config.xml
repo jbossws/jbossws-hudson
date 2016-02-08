@@ -4,15 +4,13 @@
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
       <childProjects>
-CXF-CORE-AS-9.0.0
-
-, CXF-CORE-AS-9.0.1
+CXF-CORE-AS-9.0.1
 
 , CXF-CORE-AS-9.0.2
 
 , CXF-CORE-AS-10.0.0
 
-, CXF-CORE-AS-9.0.0-SECMGR
+, CXF-CORE-AS-10.1.0
 
 , CXF-CORE-AS-9.0.1-SECMGR
 
@@ -20,7 +18,7 @@ CXF-CORE-AS-9.0.0
 
 , CXF-CORE-AS-10.0.0-SECMGR
 
-, CXF-CORE-AS-9.0.0-IPV6
+, CXF-CORE-AS-10.1.0-SECMGR
 
 , CXF-CORE-AS-9.0.1-IPV6
 
@@ -28,13 +26,15 @@ CXF-CORE-AS-9.0.0
 
 , CXF-CORE-AS-10.0.0-IPV6
 
-, CXF-PERF-AS-9.0.0
+, CXF-CORE-AS-10.1.0-IPV6
 
 , CXF-PERF-AS-9.0.1
 
 , CXF-PERF-AS-9.0.2
 
 , CXF-PERF-AS-10.0.0
+
+, CXF-PERF-AS-10.1.0
       </childProjects>
       <threshold>
         <name>UNSTABLE</name>

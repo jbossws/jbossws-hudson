@@ -6,15 +6,16 @@
 #
 # Module settings
 #
-MODULE=CXF-CORE-AS-9.0.0
+MODULE=CXF-CORE-AS-10.1.0
 
 WORKSPACE=`pwd`
 STACK_ID=cxf
 JAVA_HOME=@java.home.sun.jdk8@
 SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
-TEST_OPTS=
-JBOSS_TARGET=wildfly900
+TEST_OPTS="-Dtest=Foo -Dquiet"
+JBOSS_TARGET=wildfly1010
+JBOSS_INSTANCE=@hudson.home@/jobs/AS-10.1.0/workspace/dist/target/@hudson.jboss1010.build@
 
 #
 # load test functions
@@ -24,15 +25,41 @@ JBOSS_TARGET=wildfly900
 #
 # execute core tests
 #
-coreTest
+perfTest
 
 </command>
     </hudson.tasks.Shell>
   </builders>
   <publishers class="vector">
-    <hudson.tasks.junit.JUnitResultArchiver>
-      <testResults>stack-cxf/**/target/surefire-reports/*.xml</testResults>
-    </hudson.tasks.junit.JUnitResultArchiver>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>stack-cxf/modules/testsuite/perf-tests/target/jmeter/results/TransactionsPerSecond.png</artifacts>
+      <allowEmptyArchive>false</allowEmptyArchive>
+      <onlyIfSuccessful>false</onlyIfSuccessful>
+      <fingerprint>false</fingerprint>
+      <defaultExcludes>true</defaultExcludes>
+    </hudson.tasks.ArtifactArchiver>
+    <hudson.plugins.performance.PerformancePublisher plugin="performance@1.13">
+      <errorFailedThreshold>2</errorFailedThreshold>
+      <errorUnstableThreshold>1</errorUnstableThreshold>
+      <errorUnstableResponseTimeThreshold></errorUnstableResponseTimeThreshold>
+      <relativeFailedThresholdPositive>0.0</relativeFailedThresholdPositive>
+      <relativeFailedThresholdNegative>0.0</relativeFailedThresholdNegative>
+      <relativeUnstableThresholdPositive>0.0</relativeUnstableThresholdPositive>
+      <relativeUnstableThresholdNegative>0.0</relativeUnstableThresholdNegative>
+      <nthBuildNumber>0</nthBuildNumber>
+      <modeRelativeThresholds>false</modeRelativeThresholds>
+      <configType>ART</configType>
+      <modeOfThreshold>false</modeOfThreshold>
+      <compareBuildPrevious>false</compareBuildPrevious>
+      <xml></xml>
+      <modePerformancePerTestCase>true</modePerformancePerTestCase>
+      <parsers>
+        <hudson.plugins.performance.JMeterParser>
+          <glob>stack-cxf/modules/testsuite/perf-tests/target/jmeter/results/jbossws-basic-pojo.jtl</glob>
+        </hudson.plugins.performance.JMeterParser>
+      </parsers>
+      <modeThroughput>true</modeThroughput>
+    </hudson.plugins.performance.PerformancePublisher>
     <hudson.tasks.Mailer>
       <recipients>@hudson.mail.recipients@</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
@@ -91,6 +118,6 @@ coreTest
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss900.build@</description>
+  <description>Build and perf test jbossws-cxf-@version.id@ against @hudson.jboss1010.build@</description>
   <actions class="vector"/>
 </project>
