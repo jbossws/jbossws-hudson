@@ -6,7 +6,7 @@
 #
 # Module settings
 #
-MODULE=CXF-CORE-AS-9.0.1-SECMGR
+MODULE=CXF-CORE-AS-11.0.0-SECMGR
 
 WORKSPACE=`pwd`
 STACK_ID=cxf
@@ -14,7 +14,8 @@ JAVA_HOME=@java.home.sun.jdk8@
 SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS=-Dsecmgr=true
-JBOSS_TARGET=wildfly901
+JBOSS_TARGET=wildfly1100
+JBOSS_INSTANCE=@hudson.home@/jobs/AS-11.0.0-SECMGR/workspace/dist/target/@hudson.jboss1100.build@
 
 #
 # load test functions
@@ -91,6 +92,6 @@ coreTestWithSecMgr
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss901.build@ (security manager enabled)</description>
+  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss1100.build@ (security manager enabled)</description>
   <actions class="vector"/>
 </project>
