@@ -15,7 +15,6 @@ SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS=
 JBOSS_TARGET=wildfly1010
-JBOSS_INSTANCE=@hudson.home@/jobs/AS-10.1.0/workspace/dist/target/@hudson.jboss1010.build@
 
 #
 # load test functions
