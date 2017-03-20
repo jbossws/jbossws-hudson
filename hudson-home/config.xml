@@ -62,6 +62,7 @@
         <string>AS-10.0.0-SECMGR</string>
         <string>AS-10.1.0-SECMGR</string>
         <string>AS-11.0.0-SECMGR</string>
+        <string>AS-11.0.0-JDK9</string>
         <string>AS-11.0.0</string>
       </jobNames>
       <name>AS Builds</name>
@@ -82,6 +83,7 @@
         <string>CXF-CORE-AS-10.0.0</string>
         <string>CXF-CORE-AS-10.1.0</string>
         <string>CXF-CORE-AS-11.0.0</string>
+        <string>CXF-CORE-AS-11.0.0-JDK9</string>
         <string>CXF-CORE-AS-9.0.2-SECMGR</string>
         <string>CXF-CORE-AS-10.0.0-SECMGR</string>
         <string>CXF-CORE-AS-10.1.0-SECMGR</string>
