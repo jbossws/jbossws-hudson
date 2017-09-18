@@ -35,7 +35,7 @@ hudson.jboss1010.build=wildfly-10.1.0.CR1
 hudson.jboss1010.rev=10.1.0.CR1
 
 hudson.jboss1100.url=https://github.com/wildfly/wildfly
-hudson.jboss1100.build=wildfly-11.0.0.Alpha1-SNAPSHOT
+hudson.jboss1100.build=wildfly-11.0.0.Final-SNAPSHOT
 hudson.jboss1100.rev=master
 
 hudson.mail.recipients=
