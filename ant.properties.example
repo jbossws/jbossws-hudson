@@ -9,7 +9,6 @@ jboss.repository=http://repository.jboss.org
 jboss.bind.address=localhost
 
 # JDK settings
-java.home.sun.jdk7=/usr/java/jdk1.7
 java.home.sun.jdk8=/usr/java/jdk1.8
 java.home.sun.jdk9=/usr/java/jdk1.9
 
@@ -22,10 +21,6 @@ hudson.http.port=8180
 hudson.cxf.url=https://github.com/jbossws/jbossws-cxf
 hudson.cxf.rev=master
 
-hudson.jboss902.url=https://github.com/wildfly/wildfly
-hudson.jboss902.build=wildfly-9.0.2.Final
-hudson.jboss902.rev=9.0.2.Final
-
 hudson.jboss1000.url=https://github.com/wildfly/wildfly
 hudson.jboss1000.build=wildfly-10.0.0.Final
 hudson.jboss1000.rev=10.0.0.Final
@@ -35,8 +30,12 @@ hudson.jboss1010.build=wildfly-10.1.0.CR1
 hudson.jboss1010.rev=10.1.0.CR1
 
 hudson.jboss1100.url=https://github.com/wildfly/wildfly
-hudson.jboss1100.build=wildfly-11.0.0.Final-SNAPSHOT
-hudson.jboss1100.rev=master
+hudson.jboss1100.build=wildfly-11.0.0.Final
+hudson.jboss1100.rev=11.0.0.Final
+
+hudson.jboss1110.url=https://github.com/wildfly/wildfly
+hudson.jboss1110.build=wildfly-11.1.0.Beta1-SNAPSHOT
+hudson.jboss1110.rev=11.x
 
 hudson.mail.recipients=
 hudson.smtp.host=localhost

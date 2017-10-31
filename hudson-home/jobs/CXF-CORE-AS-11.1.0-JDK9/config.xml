@@ -6,15 +6,16 @@
 #
 # Module settings
 #
-MODULE=CXF-CORE-AS-9.0.2-IPV6
+MODULE=CXF-CORE-AS-11.1.0-JDK9
 
 WORKSPACE=`pwd`
 STACK_ID=cxf
-JAVA_HOME=@java.home.sun.jdk8@
+JAVA_HOME=@java.home.sun.jdk9@
 SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
-TEST_OPTS="-Djboss.bind.address=[::1] -Dipv6"
-JBOSS_TARGET=wildfly902
+TEST_OPTS=
+JBOSS_TARGET=wildfly1110
+JBOSS_INSTANCE=@hudson.home@/jobs/AS-11.1.0-JDK9/workspace/dist/target/@hudson.jboss1110.build@
 
 #
 # load test functions
@@ -91,6 +92,6 @@ coreTest
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss902.build@ with IPv6</description>
+  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss1110.build@ using JDK 9</description>
   <actions class="vector"/>
 </project>

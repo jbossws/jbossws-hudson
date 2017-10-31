@@ -33,10 +33,10 @@
   <table>
   <tr><th align=left>JBossWS CXF:</th><td>-r@hudson.cxf.rev@ @hudson.cxf.url@</td></tr>
   <tr><td colspan=2></td></tr>
-  <tr><th align=left>@hudson.jboss902.build@</th><td>-r@hudson.jboss902.rev@ @hudson.jboss902.url@</td></tr>
   <tr><th align=left>@hudson.jboss1000.build@</th><td>-r@hudson.jboss1000.rev@ @hudson.jboss1000.url@</td></tr>
   <tr><th align=left>@hudson.jboss1010.build@</th><td>-r@hudson.jboss1010.rev@ @hudson.jboss1010.url@</td></tr>
   <tr><th align=left>@hudson.jboss1100.build@</th><td>-r@hudson.jboss1100.rev@ @hudson.jboss1100.url@</td></tr>
+  <tr><th align=left>@hudson.jboss1110.build@</th><td>-r@hudson.jboss1110.rev@ @hudson.jboss1110.url@</td></tr>
   <tr><td colspan=2></td></tr>
   </table>
 ]]>
@@ -58,12 +58,13 @@
         <no-comparator/>
         <string>AS-ALL</string>
         <string>AS-LIGHT</string>
-        <string>AS-9.0.2-SECMGR</string>
         <string>AS-10.0.0-SECMGR</string>
         <string>AS-10.1.0-SECMGR</string>
         <string>AS-11.0.0-SECMGR</string>
         <string>AS-11.0.0-JDK9</string>
-        <string>AS-11.0.0</string>
+        <string>AS-11.1.0-SECMGR</string>
+        <string>AS-11.1.0-JDK9</string>
+        <string>AS-11.1.0</string>
       </jobNames>
       <name>AS Builds</name>
       <description>
@@ -79,19 +80,20 @@
       <jobNames class="tree-set">
         <no-comparator/>
         <string>CXF-ALL</string>
-        <string>CXF-CORE-AS-9.0.2</string>
         <string>CXF-CORE-AS-10.0.0</string>
         <string>CXF-CORE-AS-10.1.0</string>
         <string>CXF-CORE-AS-11.0.0</string>
+        <string>CXF-CORE-AS-11.1.0</string>
         <string>CXF-CORE-AS-11.0.0-JDK9</string>
-        <string>CXF-CORE-AS-9.0.2-SECMGR</string>
+        <string>CXF-CORE-AS-11.1.0-JDK9</string>
         <string>CXF-CORE-AS-10.0.0-SECMGR</string>
         <string>CXF-CORE-AS-10.1.0-SECMGR</string>
         <string>CXF-CORE-AS-11.0.0-SECMGR</string>
-        <string>CXF-CORE-AS-9.0.2-IPV6</string>
+        <string>CXF-CORE-AS-11.1.0-SECMGR</string>
         <string>CXF-CORE-AS-10.0.0-IPV6</string>
         <string>CXF-CORE-AS-10.1.0-IPV6</string>
         <string>CXF-CORE-AS-11.0.0-IPV6</string>
+        <string>CXF-CORE-AS-11.1.0-IPV6</string>
       </jobNames>
       <name>CXF Tests</name>
       <description>
