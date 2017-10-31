@@ -26,7 +26,7 @@ hudson.jboss1000.build=wildfly-10.0.0.Final
 hudson.jboss1000.rev=10.0.0.Final
 
 hudson.jboss1010.url=https://github.com/wildfly/wildfly
-hudson.jboss1010.build=wildfly-10.1.0.CR1
+hudson.jboss1010.build=wildfly-10.1.0.Final
 hudson.jboss1010.rev=10.1.0.Final
 
 hudson.jboss1100.url=https://github.com/wildfly/wildfly
