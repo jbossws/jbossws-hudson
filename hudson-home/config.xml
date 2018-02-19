@@ -36,7 +36,7 @@
   <tr><th align=left>@hudson.jboss1000.build@</th><td>-r@hudson.jboss1000.rev@ @hudson.jboss1000.url@</td></tr>
   <tr><th align=left>@hudson.jboss1010.build@</th><td>-r@hudson.jboss1010.rev@ @hudson.jboss1010.url@</td></tr>
   <tr><th align=left>@hudson.jboss1100.build@</th><td>-r@hudson.jboss1100.rev@ @hudson.jboss1100.url@</td></tr>
-  <tr><th align=left>@hudson.jboss1110.build@</th><td>-r@hudson.jboss1110.rev@ @hudson.jboss1110.url@</td></tr>
+  <tr><th align=left>@hudson.jboss1200.build@</th><td>-r@hudson.jboss1200.rev@ @hudson.jboss1200.url@</td></tr>
   <tr><td colspan=2></td></tr>
   </table>
 ]]>
@@ -62,9 +62,9 @@
         <string>AS-10.1.0-SECMGR</string>
         <string>AS-11.0.0-SECMGR</string>
         <string>AS-11.0.0-JDK9</string>
-        <string>AS-11.1.0-SECMGR</string>
-        <string>AS-11.1.0-JDK9</string>
-        <string>AS-11.1.0</string>
+        <string>AS-12.0.0-SECMGR</string>
+        <string>AS-12.0.0-JDK9</string>
+        <string>AS-12.0.0</string>
       </jobNames>
       <name>AS Builds</name>
       <description>
@@ -83,17 +83,17 @@
         <string>CXF-CORE-AS-10.0.0</string>
         <string>CXF-CORE-AS-10.1.0</string>
         <string>CXF-CORE-AS-11.0.0</string>
-        <string>CXF-CORE-AS-11.1.0</string>
+        <string>CXF-CORE-AS-12.0.0</string>
         <string>CXF-CORE-AS-11.0.0-JDK9</string>
-        <string>CXF-CORE-AS-11.1.0-JDK9</string>
+        <string>CXF-CORE-AS-12.0.0-JDK9</string>
         <string>CXF-CORE-AS-10.0.0-SECMGR</string>
         <string>CXF-CORE-AS-10.1.0-SECMGR</string>
         <string>CXF-CORE-AS-11.0.0-SECMGR</string>
-        <string>CXF-CORE-AS-11.1.0-SECMGR</string>
+        <string>CXF-CORE-AS-12.0.0-SECMGR</string>
         <string>CXF-CORE-AS-10.0.0-IPV6</string>
         <string>CXF-CORE-AS-10.1.0-IPV6</string>
         <string>CXF-CORE-AS-11.0.0-IPV6</string>
-        <string>CXF-CORE-AS-11.1.0-IPV6</string>
+        <string>CXF-CORE-AS-12.0.0-IPV6</string>
       </jobNames>
       <name>CXF Tests</name>
       <description>

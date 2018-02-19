@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Builds WildFly 11.1.0</description>
+  <description>Builds WildFly 12.0.0</description>
   <logRotator>
     <daysToKeep>-1</daysToKeep>
     <numToKeep>20</numToKeep>
@@ -23,14 +23,14 @@
         <string>uploadpack</string>
         <string>git-upload-pack</string>
         <string>url</string>
-        <string>@hudson.jboss1110.url@.git</string>
+        <string>@hudson.jboss1200.url@.git</string>
         <string>tagopt</string>
         <string></string>
       </org.spearce.jgit.transport.RemoteConfig>
     </remoteRepositories>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>@hudson.jboss1110.rev@</name>
+        <name>@hudson.jboss1200.rev@</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <localBranch></localBranch>
@@ -44,7 +44,7 @@
     <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
     <gitTool>Default</gitTool>
     <browser class="hudson.plugins.git.browser.GithubWeb">
-      <url>@hudson.jboss1110.url@</url>
+      <url>@hudson.jboss1200.url@</url>
     </browser>
     <submoduleCfg class="list"/>
     <relativeTargetDir></relativeTargetDir>

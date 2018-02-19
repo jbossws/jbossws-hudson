@@ -6,16 +6,16 @@
 #
 # Module settings
 #
-MODULE=CXF-CORE-AS-11.1.0-JDK9
+MODULE=CXF-CORE-AS-12.0.0
 
 WORKSPACE=`pwd`
 STACK_ID=cxf
-JAVA_HOME=@java.home.sun.jdk9@
+JAVA_HOME=@java.home.sun.jdk8@
 SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS=
-JBOSS_TARGET=wildfly1110
-JBOSS_INSTANCE=@hudson.home@/jobs/AS-11.1.0-JDK9/workspace/dist/target/@hudson.jboss1110.build@
+JBOSS_TARGET=wildfly1200
+JBOSS_INSTANCE=@hudson.home@/jobs/AS-12.0.0/workspace/dist/target/@hudson.jboss1200.build@
 
 #
 # load test functions
@@ -92,6 +92,6 @@ coreTest
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss1110.build@ using JDK 9</description>
+  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss1200.build@</description>
   <actions class="vector"/>
 </project>

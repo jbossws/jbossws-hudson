@@ -1,46 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
-  <builders class="vector">
-    <hudson.tasks.Shell>
-      <command>
-#
-# Module settings
-#
-MODULE=CXF-CORE-AS-11.1.0
-
-WORKSPACE=`pwd`
-STACK_ID=cxf
-JAVA_HOME=@java.home.sun.jdk8@
-SCRIPTS_DIR=@hudson.home@/../scripts
-STACK_DIR=$WORKSPACE/stack-cxf
-TEST_OPTS=
-JBOSS_TARGET=wildfly1110
-JBOSS_INSTANCE=@hudson.home@/jobs/AS-11.1.0/workspace/dist/target/@hudson.jboss1110.build@
-
-#
-# load test functions
-#
-. $SCRIPTS_DIR/jbossws-qa.sh
-
-#
-# execute core tests
-#
-coreTest
-
-</command>
-    </hudson.tasks.Shell>
-  </builders>
-  <publishers class="vector">
-    <hudson.tasks.junit.JUnitResultArchiver>
-      <testResults>stack-cxf/**/target/surefire-reports/*.xml</testResults>
-    </hudson.tasks.junit.JUnitResultArchiver>
-    <hudson.tasks.Mailer>
-      <recipients>@hudson.mail.recipients@</recipients>
-      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
-      <sendToIndividuals>true</sendToIndividuals>
-    </hudson.tasks.Mailer>
-  </publishers>
-  <buildWrappers class="vector"/>
+  <actions/>
+  <description>Builds WildFly 12.0.0 with security manager enabled</description>
+  <logRotator>
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>20</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
   <scm class="hudson.plugins.git.GitSCM">
     <configVersion>1</configVersion>
     <remoteRepositories>
@@ -54,14 +23,14 @@ coreTest
         <string>uploadpack</string>
         <string>git-upload-pack</string>
         <string>url</string>
-        <string>@hudson.cxf.url@.git</string>
+        <string>@hudson.jboss1200.url@.git</string>
         <string>tagopt</string>
         <string></string>
       </org.spearce.jgit.transport.RemoteConfig>
     </remoteRepositories>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>@hudson.cxf.rev@</name>
+        <name>@hudson.jboss1200.rev@</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <localBranch></localBranch>
@@ -75,23 +44,32 @@ coreTest
     <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
     <gitTool>Default</gitTool>
     <browser class="hudson.plugins.git.browser.GithubWeb">
-      <url>@hudson.cxf.url@</url>
+      <url>@hudson.jboss1200.url@</url>
     </browser>
     <submoduleCfg class="list"/>
-    <relativeTargetDir>stack-cxf</relativeTargetDir>
+    <relativeTargetDir></relativeTargetDir>
     <excludedRegions></excludedRegions>
     <excludedUsers></excludedUsers>
   </scm>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
-  <enableRemoteTrigger>false</enableRemoteTrigger>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers class="vector"/>
-  <logRotator>
-    <daysToKeep>14</daysToKeep>
-    <numToKeep>-1</numToKeep>
-  </logRotator>
-  <keepDependencies>false</keepDependencies>
-  <properties/>
-  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss1110.build@</description>
-  <actions class="vector"/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>MAVEN_OPTS=&quot;-Xmx1024m -Xms512m&quot;
+export MAVEN_OPTS
+export JAVA_HOME=@java.home.sun.jdk8@
+./build.sh clean install -Dskip-download-sources -DskipTests=true -Dsecurity.manager=yes -U -B</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer>
+      <recipients></recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers/>
 </project>
