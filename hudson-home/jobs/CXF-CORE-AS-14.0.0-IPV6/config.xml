@@ -6,16 +6,16 @@
 #
 # Module settings
 #
-MODULE=CXF-CORE-AS-10.1.0-SECMGR
+MODULE=CXF-CORE-AS-14.0.0-IPV6
 
 WORKSPACE=`pwd`
 STACK_ID=cxf
 JAVA_HOME=@java.home.sun.jdk8@
 SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
-TEST_OPTS=-Dsecmgr=true
-JBOSS_TARGET=wildfly1010
-JBOSS_INSTANCE=@hudson.home@/jobs/AS-10.1.0-SECMGR/workspace/dist/target/@hudson.jboss1010.build@
+TEST_OPTS="-Djboss.bind.address=[::1] -Dipv6"
+JBOSS_TARGET=wildfly1400
+JBOSS_INSTANCE=@hudson.home@/jobs/AS-14.0.0/workspace/dist/target/@hudson.jboss1400.build@
 
 #
 # load test functions
@@ -25,7 +25,7 @@ JBOSS_INSTANCE=@hudson.home@/jobs/AS-10.1.0-SECMGR/workspace/dist/target/@hudson
 #
 # execute core tests
 #
-coreTestWithSecMgr
+coreTest
 
 </command>
     </hudson.tasks.Shell>
@@ -92,6 +92,6 @@ coreTestWithSecMgr
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss1010.build@ (security manager enabled)</description>
+  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss1400.build@ with IPv6</description>
   <actions class="vector"/>
 </project>

@@ -6,7 +6,7 @@
 #
 # Module settings
 #
-MODULE=CXF-CORE-AS-10.1.0
+MODULE=CXF-CORE-AS-14.0.0
 
 WORKSPACE=`pwd`
 STACK_ID=cxf
@@ -14,7 +14,8 @@ JAVA_HOME=@java.home.sun.jdk8@
 SCRIPTS_DIR=@hudson.home@/../scripts
 STACK_DIR=$WORKSPACE/stack-cxf
 TEST_OPTS="-Dtest=Foo -Dquiet"
-JBOSS_TARGET=wildfly1010
+JBOSS_TARGET=wildfly1400
+JBOSS_INSTANCE=@hudson.home@/jobs/AS-14.0.0/workspace/dist/target/@hudson.jboss1400.build@
 
 #
 # load test functions
@@ -117,6 +118,6 @@ perfTest
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <description>Build and perf test jbossws-cxf-@version.id@ against @hudson.jboss1010.build@</description>
+  <description>Build and perf test jbossws-cxf-@version.id@ against @hudson.jboss1400.build@</description>
   <actions class="vector"/>
 </project>
