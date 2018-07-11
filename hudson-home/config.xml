@@ -59,13 +59,13 @@
         <string>AS-ALL</string>
         <string>AS-LIGHT</string>
         <string>AS-11.0.0-SECMGR</string>
-        <string>AS-11.0.0-JDK9</string>
+        <string>AS-11.0.0-JDK10</string>
         <string>AS-12.0.0-SECMGR</string>
-        <string>AS-12.0.0-JDK9</string>
+        <string>AS-12.0.0-JDK10</string>
         <string>AS-13.0.0-SECMGR</string>
-        <string>AS-13.0.0-JDK9</string>
+        <string>AS-13.0.0-JDK10</string>
         <string>AS-14.0.0-SECMGR</string>
-        <string>AS-14.0.0-JDK9</string>
+        <string>AS-14.0.0-JDK10</string>
         <string>AS-14.0.0</string>
       </jobNames>
       <name>AS Builds</name>
@@ -86,10 +86,10 @@
         <string>CXF-CORE-AS-12.0.0</string>
         <string>CXF-CORE-AS-13.0.0</string>
         <string>CXF-CORE-AS-14.0.0</string>
-        <string>CXF-CORE-AS-11.0.0-JDK9</string>
-        <string>CXF-CORE-AS-12.0.0-JDK9</string>
-        <string>CXF-CORE-AS-13.0.0-JDK9</string>
-        <string>CXF-CORE-AS-14.0.0-JDK9</string>
+        <string>CXF-CORE-AS-11.0.0-JDK10</string>
+        <string>CXF-CORE-AS-12.0.0-JDK10</string>
+        <string>CXF-CORE-AS-13.0.0-JDK10</string>
+        <string>CXF-CORE-AS-14.0.0-JDK10</string>
         <string>CXF-CORE-AS-11.0.0-SECMGR</string>
         <string>CXF-CORE-AS-12.0.0-SECMGR</string>
         <string>CXF-CORE-AS-13.0.0-SECMGR</string>
