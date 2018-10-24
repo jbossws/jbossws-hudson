@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Builds WildFly 11.0.0 using JDK 9</description>
+  <description>Builds WildFly 15.0.0 with security manager enabled</description>
   <logRotator>
     <daysToKeep>-1</daysToKeep>
     <numToKeep>20</numToKeep>
@@ -23,14 +23,14 @@
         <string>uploadpack</string>
         <string>git-upload-pack</string>
         <string>url</string>
-        <string>@hudson.jboss1100.url@.git</string>
+        <string>@hudson.jboss1500.url@.git</string>
         <string>tagopt</string>
         <string></string>
       </org.spearce.jgit.transport.RemoteConfig>
     </remoteRepositories>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>@hudson.jboss1100.rev@</name>
+        <name>@hudson.jboss1500.rev@</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <localBranch></localBranch>
@@ -44,7 +44,7 @@
     <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
     <gitTool>Default</gitTool>
     <browser class="hudson.plugins.git.browser.GithubWeb">
-      <url>@hudson.jboss1100.url@</url>
+      <url>@hudson.jboss1500.url@</url>
     </browser>
     <submoduleCfg class="list"/>
     <relativeTargetDir></relativeTargetDir>
@@ -60,8 +60,8 @@
     <hudson.tasks.Shell>
       <command>MAVEN_OPTS=&quot;-Xmx1024m -Xms512m&quot;
 export MAVEN_OPTS
-export JAVA_HOME=@java.home.oracle.jdk10@
-./build.sh clean install -Dskip-download-sources -DskipTests=true -U -B</command>
+export JAVA_HOME=@java.home.sun.jdk8@
+./build.sh clean install -Dskip-download-sources -DskipTests=true -Dsecurity.manager=yes -U -B</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Builds WildFly 13.0.0 using JDK 9</description>
+  <description>Builds WildFly 13.0.0 using JDK 11</description>
   <logRotator>
     <daysToKeep>-1</daysToKeep>
     <numToKeep>20</numToKeep>
@@ -60,7 +60,7 @@
     <hudson.tasks.Shell>
       <command>MAVEN_OPTS=&quot;-Xmx1024m -Xms512m&quot;
 export MAVEN_OPTS
-export JAVA_HOME=@java.home.oracle.jdk10@
+export JAVA_HOME=@java.home.oracle.jdk11@
 ./build.sh clean install -Dskip-download-sources -DskipTests=true -U -B</command>
     </hudson.tasks.Shell>
   </builders>

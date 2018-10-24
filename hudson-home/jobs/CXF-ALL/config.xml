@@ -4,23 +4,21 @@
   <publishers class="vector">
     <hudson.tasks.BuildTrigger>
       <childProjects>
-CXF-CORE-AS-11.0.0
-
-, CXF-CORE-AS-12.0.0
+CXF-CORE-AS-12.0.0
 
 , CXF-CORE-AS-13.0.0
 
 , CXF-CORE-AS-14.0.0
 
-, CXF-CORE-AS-11.0.0-JDK10
+, CXF-CORE-AS-15.0.0
 
-, CXF-CORE-AS-12.0.0-JDK10
+, CXF-CORE-AS-12.0.0-JDK11
 
-, CXF-CORE-AS-13.0.0-JDK10
+, CXF-CORE-AS-13.0.0-JDK11
 
-, CXF-CORE-AS-14.0.0-JDK10
+, CXF-CORE-AS-14.0.0-JDK11
 
-, CXF-CORE-AS-11.0.0-SECMGR
+, CXF-CORE-AS-15.0.0-JDK11
 
 , CXF-CORE-AS-12.0.0-SECMGR
 
@@ -28,7 +26,7 @@ CXF-CORE-AS-11.0.0
 
 , CXF-CORE-AS-14.0.0-SECMGR
 
-, CXF-CORE-AS-11.0.0-IPV6
+, CXF-CORE-AS-15.0.0-SECMGR
 
 , CXF-CORE-AS-12.0.0-IPV6
 
@@ -36,13 +34,15 @@ CXF-CORE-AS-11.0.0
 
 , CXF-CORE-AS-14.0.0-IPV6
 
-, CXF-PERF-AS-11.0.0
+, CXF-CORE-AS-15.0.0-IPV6
 
 , CXF-PERF-AS-12.0.0
 
 , CXF-PERF-AS-13.0.0
 
 , CXF-PERF-AS-14.0.0
+
+, CXF-PERF-AS-15.0.0
       </childProjects>
       <threshold>
         <name>UNSTABLE</name>

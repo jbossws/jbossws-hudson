@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <builders class="vector">
+    <hudson.tasks.Shell>
+      <command>
+#
+# Module settings
+#
+MODULE=CXF-CORE-AS-12.0.0-JDK11
+
+WORKSPACE=`pwd`
+STACK_ID=cxf
+JAVA_HOME=@java.home.oracle.jdk11@
+SCRIPTS_DIR=@hudson.home@/../scripts
+STACK_DIR=$WORKSPACE/stack-cxf
+TEST_OPTS=
+JBOSS_TARGET=wildfly1200
+JBOSS_INSTANCE=@hudson.home@/jobs/AS-12.0.0-JDK11/workspace/dist/target/@hudson.jboss1200.build@
+
+#
+# load test functions
+#
+. $SCRIPTS_DIR/jbossws-qa.sh
+
+#
+# execute core tests
+#
+coreTest
+
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers class="vector">
+    <hudson.tasks.junit.JUnitResultArchiver>
+      <testResults>stack-cxf/**/target/surefire-reports/*.xml</testResults>
+    </hudson.tasks.junit.JUnitResultArchiver>
+    <hudson.tasks.Mailer>
+      <recipients>@hudson.mail.recipients@</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>true</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers class="vector"/>
+  <scm class="hudson.plugins.git.GitSCM">
+    <configVersion>1</configVersion>
+    <remoteRepositories>
+      <org.spearce.jgit.transport.RemoteConfig>
+        <string>origin</string>
+        <int>5</int>
+        <string>fetch</string>
+        <string>+refs/heads/*:refs/remotes/origin/*</string>
+        <string>receivepack</string>
+        <string>git-upload-pack</string>
+        <string>uploadpack</string>
+        <string>git-upload-pack</string>
+        <string>url</string>
+        <string>@hudson.cxf.url@.git</string>
+        <string>tagopt</string>
+        <string></string>
+      </org.spearce.jgit.transport.RemoteConfig>
+    </remoteRepositories>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>@hudson.cxf.rev@</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <localBranch></localBranch>
+    <mergeOptions/>
+    <recursiveSubmodules>false</recursiveSubmodules>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <authorOrCommitter>false</authorOrCommitter>
+    <clean>false</clean>
+    <wipeOutWorkspace>false</wipeOutWorkspace>
+    <pruneBranches>false</pruneBranches>
+    <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
+    <gitTool>Default</gitTool>
+    <browser class="hudson.plugins.git.browser.GithubWeb">
+      <url>@hudson.cxf.url@</url>
+    </browser>
+    <submoduleCfg class="list"/>
+    <relativeTargetDir>stack-cxf</relativeTargetDir>
+    <excludedRegions></excludedRegions>
+    <excludedUsers></excludedUsers>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <enableRemoteTrigger>false</enableRemoteTrigger>
+  <triggers class="vector"/>
+  <logRotator>
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <description>Build and test jbossws-cxf-@version.id@ against @hudson.jboss1200.build@ using JDK 11</description>
+  <actions class="vector"/>
+</project>

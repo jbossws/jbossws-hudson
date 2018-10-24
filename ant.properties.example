@@ -10,7 +10,7 @@ jboss.bind.address=localhost
 
 # JDK settings
 java.home.sun.jdk8=/usr/java/jdk1.8
-java.home.oracle.jdk10=/usr/java/jdk10
+java.home.oracle.jdk11=/usr/java/jdk11
 
 # Hudson QA Environment
 hudson.root=/data/workspace
@@ -21,10 +21,6 @@ hudson.http.port=8180
 hudson.cxf.url=https://github.com/jbossws/jbossws-cxf
 hudson.cxf.rev=master
 
-hudson.jboss1100.url=https://github.com/wildfly/wildfly
-hudson.jboss1100.build=wildfly-11.0.0.Final
-hudson.jboss1100.rev=11.0.0.Final
-
 hudson.jboss1200.url=https://github.com/wildfly/wildfly
 hudson.jboss1200.build=wildfly-12.0.0.Final
 hudson.jboss1200.rev=12.0.0.Final
@@ -34,8 +30,12 @@ hudson.jboss1300.build=wildfly-13.0.0.Final
 hudson.jboss1300.rev=13.0.0.Final
 
 hudson.jboss1400.url=https://github.com/wildfly/wildfly
-hudson.jboss1400.build=wildfly-14.0.0.Beta1-SNAPSHOT
-hudson.jboss1400.rev=master
+hudson.jboss1400.build=wildfly-14.0.0.Final
+hudson.jboss1400.rev=14.0.0.Final
+
+hudson.jboss1500.url=https://github.com/wildfly/wildfly
+hudson.jboss1500.build=wildfly-15.0.0.Alpha1-SNAPSHOT
+hudson.jboss1500.rev=master
 
 hudson.mail.recipients=
 hudson.smtp.host=localhost
